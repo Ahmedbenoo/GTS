@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type AnimationEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { company, nav } from "@/lib/content";
@@ -9,12 +9,23 @@ import { Logo } from "./Mark";
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [phase, setPhase] = useState<"closed" | "open" | "closing">("closed");
   const [soon, setSoon] = useState(0);
   const onHome = pathname === "/";
+  const menuVisible = phase !== "closed";
+
+  function closeMenu() {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    setPhase(reduce ? "closed" : "closing");
+  }
+
+  function toggleMenu() {
+    if (phase === "open") closeMenu();
+    else setPhase("open");
+  }
 
   function showSoon() {
-    setOpen(false);
+    closeMenu();
     setSoon((value) => value + 1);
   }
 
@@ -26,22 +37,22 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!open) return;
+    if (!menuVisible) return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = previous;
     };
-  }, [open]);
+  }, [menuVisible]);
 
   useEffect(() => {
-    if (!open) return;
+    if (phase !== "open") return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") closeMenu();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [phase]);
 
   useEffect(() => {
     if (!soon) return;
@@ -49,96 +60,107 @@ export function Navbar() {
     return () => window.clearTimeout(timer);
   }, [soon]);
 
+  function onMenuAnimationEnd(event: AnimationEvent<HTMLElement>) {
+    if (event.target !== event.currentTarget) return;
+    if (event.animationName !== "menu-out") return;
+    setPhase((value) => (value === "closing" ? "closed" : value));
+  }
+
   return (
-    <header className={!onHome || scrolled || open ? "nav nav-on" : "nav"}>
-      <a className="nav-brand" href="/">
-        <Logo priority />
-        <span>
-          <strong>GTS</strong>
-          <small>للاستثمار الزراعي</small>
-        </span>
-      </a>
-
-      <nav className="nav-links" aria-label="التنقل الرئيسي">
-        {nav.map((item) =>
-          item.href === "/" ? (
-            <a
-              key={item.href}
-              href="/"
-              className={pathname === "/" ? "is-active" : undefined}
-              aria-current={pathname === "/" ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          ) : (
-            <button key={item.href} type="button" className="nav-idle" onClick={showSoon}>
-              {item.label}
-            </button>
-          ),
-        )}
-      </nav>
-
-      <a className="btn btn-gold nav-cta" href="/#contact">
-        تواصل معنا
-      </a>
-
-      <button
-        type="button"
-        className={open ? "nav-burger is-open" : "nav-burger"}
-        aria-expanded={open}
-        aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
-        onClick={() => setOpen((value) => !value)}
+    <>
+      <header
+        className={[
+          "nav",
+          !onHome || scrolled || menuVisible ? "nav-on" : "",
+          menuVisible ? "nav-cover" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
       >
-        <span />
-        <span />
-      </button>
+        <a className="nav-brand" href="/">
+          <Logo priority />
+          <span>
+            <strong>GTS</strong>
+            <small>للاستثمار الزراعي</small>
+          </span>
+        </a>
 
-      <AnimatePresence>
-        {open ? (
-          <motion.nav
-            className="nav-menu"
-            aria-label="قائمة الجوال"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
+        <nav className="nav-links" aria-label="التنقل الرئيسي">
+          {nav.map((item) =>
+            item.href === "/" ? (
+              <a
+                key={item.href}
+                href="/"
+                className={pathname === "/" ? "is-active" : undefined}
+                aria-current={pathname === "/" ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            ) : (
+              <button key={item.href} type="button" className="nav-idle" onClick={showSoon}>
+                {item.label}
+              </button>
+            ),
+          )}
+        </nav>
+
+        <a className="btn btn-gold nav-cta" href="/#contact">
+          تواصل معنا
+        </a>
+
+        <button
+          type="button"
+          className={menuVisible ? "nav-burger is-open" : "nav-burger"}
+          aria-expanded={phase === "open"}
+          aria-label={phase === "open" ? "إغلاق القائمة" : "فتح القائمة"}
+          onClick={toggleMenu}
+        >
+          <span />
+          <span />
+        </button>
+        <span className="sr-only">{company.fullName}</span>
+      </header>
+
+      {menuVisible ? (
+        <nav
+          className={phase === "closing" ? "nav-menu is-closing" : "nav-menu is-open"}
+          aria-label="قائمة الجوال"
+          onAnimationEnd={onMenuAnimationEnd}
+        >
+          {nav.map((item, index) =>
+            item.href === "/" ? (
+              <a
+                key={item.href}
+                href="/"
+                className={pathname === "/" ? "is-active" : undefined}
+                aria-current={pathname === "/" ? "page" : undefined}
+                onClick={closeMenu}
+              >
+                <em>{String(index + 1).padStart(2, "0")}</em>
+                {item.label}
+              </a>
+            ) : (
+              <button
+                key={item.href}
+                type="button"
+                className="nav-idle"
+                onClick={showSoon}
+              >
+                <em>{String(index + 1).padStart(2, "0")}</em>
+                {item.label}
+              </button>
+            ),
+          )}
+          <a
+            className="btn btn-gold"
+            href="/#contact"
+            onClick={closeMenu}
           >
-            {nav.map((item, index) =>
-              item.href === "/" ? (
-                <motion.a
-                  key={item.href}
-                  href="/"
-                  className={pathname === "/" ? "is-active" : undefined}
-                  aria-current={pathname === "/" ? "page" : undefined}
-                  onClick={() => setOpen(false)}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 * index + 0.05 }}
-                >
-                  <em>{String(index + 1).padStart(2, "0")}</em>
-                  {item.label}
-                </motion.a>
-              ) : (
-                <motion.button
-                  key={item.href}
-                  type="button"
-                  className="nav-idle"
-                  onClick={showSoon}
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 * index + 0.05 }}
-                >
-                  <em>{String(index + 1).padStart(2, "0")}</em>
-                  {item.label}
-                </motion.button>
-              ),
-            )}
-            <a className="btn btn-gold" href="/#contact" onClick={() => setOpen(false)}>
-              تواصل معنا
-            </a>
-          </motion.nav>
-        ) : null}
-      </AnimatePresence>
+            تواصل معنا
+          </a>
+        </nav>
+      ) : null}
+
       <AnimatePresence>
         {soon ? (
           <motion.div
@@ -155,7 +177,6 @@ export function Navbar() {
           </motion.div>
         ) : null}
       </AnimatePresence>
-      <span className="sr-only">{company.fullName}</span>
-    </header>
+    </>
   );
 }
