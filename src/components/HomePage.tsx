@@ -6,6 +6,7 @@ import { Footer, WhatsFloat } from "./Footer";
 import { Hero } from "./Hero";
 import { Loader } from "./Loader";
 import { Navbar } from "./Navbar";
+import { ScrollMotion } from "./ScrollMotion";
 import { Marquee, Process, Quote, Services, Systems, Why } from "./Sections";
 
 export function HomePage() {
@@ -15,7 +16,10 @@ export function HomePage() {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const seen = sessionStorage.getItem("gts-intro") === "1";
-    if (reduceMotion || seen) setShowLoader(false);
+    if (reduceMotion || seen) {
+      setShowLoader(false);
+      setBooted(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -51,6 +55,7 @@ export function HomePage() {
       </main>
       <Footer />
       <WhatsFloat />
+      <ScrollMotion />
     </>
   );
 }

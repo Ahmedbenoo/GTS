@@ -4,14 +4,10 @@ import { Logo, FacebookIcon, WhatsAppIcon } from "./Mark";
 export function Footer() {
   return (
     <footer className="footer">
-      <div className="wrap footer-grid">
+      <div className="wrap footer-grid reveal-group">
         <div>
-          <a className="nav-brand" href="/">
+          <a className="nav-brand" href="/" aria-label={company.fullName}>
             <Logo />
-            <span>
-              <strong>GTS</strong>
-              <small>للاستثمار الزراعي</small>
-            </span>
           </a>
           <p>{company.tagline}</p>
         </div>
@@ -54,7 +50,10 @@ export function Footer() {
         </div>
       </div>
       <div className="wrap footer-base">
-        <p>© 2026 {company.fullName}. جميع الحقوق محفوظة.</p>
+        <p>
+          جميع الحقوق محفوظة ل {company.fullName}{" "}
+          <span className="num">© 2026</span>
+        </p>
       </div>
     </footer>
   );

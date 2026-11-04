@@ -38,8 +38,9 @@ function Head({
   text?: string;
 }) {
   return (
-    <header className="sec-head">
+    <header className="sec-head reveal">
       <p className="kicker">{kicker}</p>
+      <span className="furrow" aria-hidden="true" />
       <h2 className="h2">{title}</h2>
       {text ? <p className="lead">{text}</p> : null}
     </header>
@@ -59,7 +60,7 @@ export function Services() {
           text="من الجهاز نفسه لحد آخر قطعة غيار. GTS بتغطي دورة الري كاملة: توريد، تركيب، تشغيل، وصيانة."
         />
         <div className="services-layout">
-          <div className="services-visual">
+          <div className="services-visual reveal reveal-photo">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.image + current.num}
@@ -80,12 +81,13 @@ export function Services() {
             </AnimatePresence>
             <span className="services-caption">{current.en}</span>
           </div>
-          <div className="services-list">
+          <div className="services-list reveal-group">
             {services.map((service, index) => (
               <button
                 key={service.num}
                 type="button"
-                className={index === active ? "service-item is-on" : "service-item"}
+                className="service-item"
+                data-on={index === active ? "true" : undefined}
                 onMouseEnter={() => setActive(index)}
                 onFocus={() => setActive(index)}
                 onClick={() => setActive(index)}
@@ -107,15 +109,17 @@ export function Services() {
 export function Quote() {
   return (
     <section className="quote">
-      <Image
-        src={photos.quote}
-        alt=""
-        fill
-        sizes="100vw"
-        className="cover"
-      />
+      <div className="quote-drift" aria-hidden="true">
+        <Image
+          src={photos.quote}
+          alt=""
+          fill
+          sizes="100vw"
+          className="cover"
+        />
+      </div>
       <div className="quote-shade" />
-      <blockquote className="wrap">
+      <blockquote className="wrap reveal">
         <p>
           كل نقطة مياه
           <br />
@@ -136,7 +140,7 @@ export function Why() {
           title="شريك فني قبل ما يكون مورد"
           text={company.intro}
         />
-        <div className="reasons">
+        <div className="reasons reveal-group">
           {reasons.map((reason) => (
             <article key={reason.num} className="reason">
               <span>{reason.num}</span>
@@ -159,7 +163,7 @@ export function Systems() {
           title="محوري للمساحات الواسعة. تنقيط ورش للدقة."
           text="النظام بيتختار على الأرض: مصدر المياه، المحصول، والمساحة. الصور هنا تعبيرية لشكل الأنظمة."
         />
-        <div className="systems">
+        <div className="systems reveal-group">
           <article className="system-card">
             <div className="system-media">
               <Image
@@ -222,7 +226,7 @@ export function Process() {
           kicker="طريقة العمل"
           title="من المعاينة لحد ما الجهاز يشتغل"
         />
-        <ol className="steps">
+        <ol className="steps reveal-group">
           {steps.map((step) => (
             <li key={step.num} className="step">
               <span>{step.num}</span>

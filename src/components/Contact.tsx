@@ -42,9 +42,10 @@ export function Contact() {
 
   return (
     <section className="section section-dark contact" id="contact">
-      <div className="wrap contact-grid">
+      <div className="wrap contact-grid reveal-group">
         <div>
           <p className="kicker">تواصل</p>
+          <span className="furrow" aria-hidden="true" />
           <h2 className="h2 contact-title">قولنا نوع الأرض، ونرجعلك بالنظام المناسب.</h2>
           <p className="lead">
             المقر في {company.address.city}، {company.address.line}،{" "}

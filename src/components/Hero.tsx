@@ -5,6 +5,70 @@ import Image from "next/image";
 import { highlights, photos, whatsappLink } from "@/lib/content";
 import { Pivot } from "./Mark";
 
+function StatIcon({ name }: { name: string }) {
+  const pen = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.6,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    width: 32,
+    height: 32,
+    className: "hero-stat-icon",
+    style: { color: "var(--gold)" },
+    "aria-hidden": true,
+  };
+
+  if (name === "محوري") {
+    return (
+      <svg {...pen}>
+        <line x1="2.6" y1="7.4" x2="21.4" y2="7.4" />
+        <line x1="2.6" y1="10.6" x2="21.4" y2="10.6" />
+        <line x1="6.2" y1="7.4" x2="8.2" y2="10.6" />
+        <line x1="11" y1="7.4" x2="13" y2="10.6" />
+        <line x1="15.8" y1="7.4" x2="17.8" y2="10.6" />
+        <line x1="5.4" y1="10.6" x2="5.4" y2="15.2" />
+        <line x1="12" y1="10.6" x2="12" y2="15.2" />
+        <line x1="18.6" y1="10.6" x2="18.6" y2="15.2" />
+        <circle cx="5.4" cy="17.5" r="2.15" />
+        <circle cx="12" cy="17.5" r="2.15" />
+        <circle cx="18.6" cy="17.5" r="2.15" />
+      </svg>
+    );
+  }
+
+  if (name === "تنقيط / رش") {
+    return (
+      <svg {...pen}>
+        <line x1="3" y1="5.2" x2="21" y2="5.2" />
+        <path fill="currentColor" stroke="none" d="M6 7.2 8.3 13.8a2.3 2.3 0 1 1-4.6 0z" />
+        <path fill="currentColor" stroke="none" d="M12 7.2 14.3 13.8a2.3 2.3 0 1 1-4.6 0z" />
+        <path fill="currentColor" stroke="none" d="M18 7.2 20.3 13.8a2.3 2.3 0 1 1-4.6 0z" />
+      </svg>
+    );
+  }
+
+  if (name === "قطع الغيار") {
+    return (
+      <svg {...pen} stroke="none">
+        <path
+          fill="currentColor"
+          fillRule="evenodd"
+          d="M10.15 2h3.7l.5 2.2a7.2 7.2 0 0 1 1.9.8l2-1.05 2.6 2.6-1.05 2a7.2 7.2 0 0 1 .8 1.9l2.2.5v3.7l-2.2.5a7.2 7.2 0 0 1-.8 1.9l1.05 2-2.6 2.6-2-1.05a7.2 7.2 0 0 1-1.9.8l-.5 2.2h-3.7l-.5-2.2a7.2 7.2 0 0 1-1.9-.8l-2 1.05-2.6-2.6 1.05-2a7.2 7.2 0 0 1-.8-1.9L2 14.15v-3.7l2.2-.5a7.2 7.2 0 0 1 .8-1.9l-1.05-2 2.6-2.6 2 1.05a7.2 7.2 0 0 1 1.9-.8L10.15 2zm1.85 6.15a3.85 3.85 0 1 0 .01 7.7 3.85 3.85 0 0 0-.01-7.7z"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...pen}>
+      <path d="M12 21s6-5.1 6-9.8A6 6 0 1 0 6 11.2C6 15.9 12 21 12 21z" />
+      <circle cx="12" cy="11.1" r="2" />
+    </svg>
+  );
+}
+
 const consult = "مرحبًا، حابب أطلب استشارة مجانية.";
 const quote = "مرحبًا، حابب أطلب عرض سعر.";
 
@@ -132,6 +196,7 @@ export function Hero({ active }: { active: boolean }) {
         <dl className="hero-stats rise d6">
           {highlights.map((item) => (
             <div key={item.k}>
+              <StatIcon name={item.k} />
               <dt>{item.k}</dt>
               <dd>{item.v}</dd>
             </div>

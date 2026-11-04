@@ -29,10 +29,10 @@ export function Logo({
   return (
     <span className={`logo ${className}`}>
       <Image
-        src="/logo.jpg"
+        src="/gts-logo.png"
         alt="شعار GTS للاستثمار الزراعي"
-        width={640}
-        height={640}
+        width={916}
+        height={886}
         priority={priority}
         className="logo-img"
       />

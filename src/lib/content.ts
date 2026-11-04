@@ -37,10 +37,10 @@ export const phones = [
 
 export const nav = [
   { href: "/", label: "الرئيسية" },
-  { href: "/services", label: "الخدمات" },
-  { href: "/why", label: "لماذا GTS" },
-  { href: "/systems", label: "الأنظمة" },
-  { href: "/process", label: "طريقة العمل" },
+  { href: "/energy", label: "الطاقة" },
+  { href: "/irrigation", label: "الري" },
+  { href: "/mechanization", label: "الميكنة" },
+  { href: "/supplies", label: "التوريدات العمومية" },
 ] as const;
 
 export const marquee = [
@@ -94,8 +94,8 @@ export const services = [
     title: "المولدات والمحركات",
     en: "Power",
     text: "مجموعات توليد وحلول طاقة تكمل التشغيل في الموقع، تحت ظروف العمل الميداني المختلفة.",
-    image: "/images/pivot.jpg",
-    alt: "حقول دائرية مروية بنظام الري المحوري",
+    image: "/images/power.jpg",
+    alt: "مولدات ومحركات كهربائية داخل ورشة",
   },
   {
     num: "06",
