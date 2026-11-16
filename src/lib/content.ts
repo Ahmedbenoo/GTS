@@ -170,8 +170,8 @@ export const photos = {
   close: "/images/machine.jpg",
 } as const;
 
-export const quoteWa = "201124772995";
+export const quoteWa: string = phones[2].wa;
 
-export function whatsappLink(text: string, wa = phones[0].wa) {
+export function whatsappLink(text: string, wa: string = phones[0].wa) {
   return `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
 }
