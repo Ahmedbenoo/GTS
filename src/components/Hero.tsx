@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type MouseEvent } from "react";
 import Image from "next/image";
-import { highlights, photos, whatsappLink } from "@/lib/content";
+import { highlights, photos, quoteWa, whatsappLink } from "@/lib/content";
 import { enOf } from "@/lib/en-map";
 import { Pivot } from "./Mark";
 import { Tx } from "./Tx";
@@ -199,7 +199,7 @@ export function Hero({ active }: { active: boolean }) {
             </a>
             <a
               className="btn btn-ghost gts-lang-ar"
-              href={whatsappLink(quote)}
+              href={whatsappLink(quote, quoteWa)}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -207,7 +207,7 @@ export function Hero({ active }: { active: boolean }) {
             </a>
             <a
               className="btn btn-ghost gts-lang-en"
-              href={whatsappLink(enOf(quote))}
+              href={whatsappLink(enOf(quote), quoteWa)}
               target="_blank"
               rel="noopener noreferrer"
             >

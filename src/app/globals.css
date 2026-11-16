@@ -983,6 +983,13 @@ html.gts-skip-intro .loader { display: none !important; }
 .contact-list a { display: block; font-weight: 700; font-size: 1.15rem; text-align: start; }
 .contact-address,
 .contact-address:hover { color: var(--gold); }
+.contact-list .contact-address {
+  line-height: 1.35;
+}
+.contact-list .contact-address > .gts-ar ~ .gts-ar,
+html[dir="ltr"] .contact-list .contact-address > .gts-en ~ .gts-en {
+  margin-top: 0.15rem;
+}
 .num {
   direction: ltr;
   unicode-bidi: isolate;

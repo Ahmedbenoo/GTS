@@ -97,7 +97,8 @@ export const enMap: Record<string, string> = {
   "المبيعات": "Sales",
   "العنوان": "Address",
   "مدينة 6 أكتوبر": "6th of October City",
-  "ميدان النجدة — المحور المركزي": "El Nagda Square — Central Axis",
+  "الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر":
+    "Sheikh Zayed — Villa 68, First Neighborhood, 11th District",
   "السوشيال ميديا": "Social media",
   "الرئيسية": "Home",
   "الطاقة": "Power",
@@ -353,8 +354,8 @@ export const enMap: Record<string, string> = {
   "وحدتين ضخ على قاعدة واحدة. الاختيار على التصرف والضغط، والقاعدة تتظبط على مصدر المياه في الموقع.":
     "Two pump sets on one base. The choice follows flow and pressure, and the base is set to the water source on site.",
   "التوريد بيخرج من 6 أكتوبر": "The supply leaves from 6th of October",
-  "المقر في مدينة 6 أكتوبر، ميدان النجدة — المحور المركزي، بجوار النيابة الإدارية. من هنا بيتلم الجهاز وقطع الغيار ولوحة التحكم والطاقة.":
-    "The office is in 6th of October City, El Nagda Square — Central Axis, beside the Administrative Prosecution. The machine, spare parts, control panel, and power are gathered from here.",
+  "المقر في مدينة 6 أكتوبر، الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر. من هنا بيتلم الجهاز وقطع الغيار ولوحة التحكم والطاقة.":
+    "The office is in 6th of October City, Sheikh Zayed — Villa 68, First Neighborhood, 11th District. The machine, spare parts, control panel, and power are gathered from here.",
   "جودة تقدر تبني عليها قرارك، بمكونات واضحة. سقف واحد للمشروع الزراعي، من المعاينة لحد ما الجهاز يشتغل.":
     "Quality you can base a decision on, with clear components. One roof for the farm project, from the site visit until the machine is running.",
   "ري ومحركات وغيار": "Irrigation, engines, and spares",

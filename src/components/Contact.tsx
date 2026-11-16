@@ -70,6 +70,7 @@ function ContactForm({ lang }: { lang: "ar" | "en" }) {
         `${t.lines[3]}: ${service}`,
         `${t.lines[4]}: ${message || "—"}`,
       ].join("\n"),
+      phones[1].wa,
     );
     window.open(url, "_blank", "noopener,noreferrer");
   }
@@ -137,10 +138,10 @@ export function Contact() {
           </h2>
           <p className="lead">
             <span className="gts-ar">
-              المقر في {company.address.city}، {company.address.line}، {company.address.note}.
+              المقر في {company.address.city}، {company.address.line}.
             </span>
             <span className="gts-en">
-              The office is in 6th of October City, El Nagda Square — Central Axis, beside the Administrative Prosecution.
+              The office is in 6th of October City, Sheikh Zayed — Villa 68, First Neighborhood, 11th District.
             </span>
           </p>
           <ul className="contact-list">
@@ -163,7 +164,6 @@ export function Contact() {
                 rel="noopener noreferrer"
               >
                 <Tx text={company.address.city} />
-                <br />
                 <Tx text={company.address.line} />
               </a>
             </li>

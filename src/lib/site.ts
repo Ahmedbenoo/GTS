@@ -60,7 +60,9 @@ export function homeJsonLd() {
         telephone: phones[0].tel,
         address: {
           "@type": "PostalAddress",
-          streetAddress: `${company.address.line}، ${company.address.note}`,
+          streetAddress: company.address.note
+            ? `${company.address.line}، ${company.address.note}`
+            : company.address.line,
           addressLocality: company.address.city,
           addressRegion: "الجيزة",
           addressCountry: "EG",

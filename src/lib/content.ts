@@ -7,9 +7,9 @@ export const company = {
     "تتشرف شركة جي تي إس (GTS) للاستثمار الزراعي بتقديم خدماتها الفنية والتقنية في مجال الهندسة الزراعية المتكاملة.",
   address: {
     city: "مدينة 6 أكتوبر",
-    line: "ميدان النجدة — المحور المركزي",
-    note: "بجوار النيابة الإدارية",
-    maps: "https://www.google.com/maps/search/?api=1&query=%D9%85%D9%8A%D8%AF%D8%A7%D9%86+%D8%A7%D9%84%D9%86%D8%AC%D8%AF%D8%A9+6+%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1",
+    line: "الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر",
+    note: "",
+    maps: "https://www.google.com/maps/search/?api=1&query=%D8%A7%D9%84%D8%B4%D9%8A%D8%AE+%D8%B2%D8%A7%D9%8A%D8%AF+%D9%81%D9%8A%D9%84%D8%A7+68+%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D9%88%D8%B1%D8%A9+%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89+%D8%A7%D9%84%D8%AD%D9%8A+%D8%A7%D9%84%D8%AD%D8%A7%D8%AF%D9%8A+%D8%B9%D8%B4%D8%B1+6+%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1",
   },
   facebook: "https://www.facebook.com/people/G-T-S/61567359410983/",
 } as const;
@@ -23,15 +23,15 @@ export const phones = [
   },
   {
     label: "موبايل / واتساب",
-    display: "0108 066 2289",
-    tel: "+201080662289",
-    wa: "201080662289",
-  },
-  {
-    label: "المبيعات",
     display: "0101 324 2127",
     tel: "+201013242127",
     wa: "201013242127",
+  },
+  {
+    label: "المبيعات",
+    display: "0112 477 2995",
+    tel: "+201124772995",
+    wa: "201124772995",
   },
 ] as const;
 
@@ -169,6 +169,8 @@ export const photos = {
   rows: "/images/greens.jpg",
   close: "/images/machine.jpg",
 } as const;
+
+export const quoteWa = "201124772995";
 
 export function whatsappLink(text: string, wa = phones[0].wa) {
   return `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;

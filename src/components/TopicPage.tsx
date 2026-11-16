@@ -6,7 +6,7 @@ import { PartsShowcase } from "./PartsShowcase";
 import { PivotSection } from "./PivotSection";
 import { ScrollMotion } from "./ScrollMotion";
 import { Navbar } from "./Navbar";
-import { whatsappLink } from "@/lib/content";
+import { quoteWa, whatsappLink } from "@/lib/content";
 import { enOf } from "@/lib/en-map";
 import { shotSrc } from "@/lib/photo";
 import type { Topic } from "@/lib/topics";
@@ -64,10 +64,10 @@ export function TopicPage({ topic }: { topic: Topic }) {
               <a className="btn btn-gold gts-lang-en" href={whatsappLink(enOf(topic.consult))} target="_blank" rel="noopener noreferrer">
                 Free consultation
               </a>
-              <a className="btn btn-ghost gts-lang-ar" href={whatsappLink(topic.quote)} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-ghost gts-lang-ar" href={whatsappLink(topic.quote, quoteWa)} target="_blank" rel="noopener noreferrer">
                 عرض سعر
               </a>
-              <a className="btn btn-ghost gts-lang-en" href={whatsappLink(enOf(topic.quote))} target="_blank" rel="noopener noreferrer">
+              <a className="btn btn-ghost gts-lang-en" href={whatsappLink(enOf(topic.quote), quoteWa)} target="_blank" rel="noopener noreferrer">
                 Price quote
               </a>
             </div>
