@@ -6,6 +6,20 @@ export type TopicBlock = {
   text: string;
 };
 
+export type TopicShot = {
+  src: string;
+  alt: string;
+  fit?: "cover" | "contain";
+  caption?: string;
+  crop?: { col: number; row: number };
+};
+
+export type TopicPart = {
+  title: string;
+  text: string;
+  images: readonly TopicShot[];
+};
+
 export type Topic = {
   href: string;
   label: string;
@@ -15,12 +29,22 @@ export type Topic = {
   lead: string;
   image: string;
   alt: string;
+  heroImage?: string;
+  heroAlt?: string;
+  imagePosition?: string;
+  storyImage?: string;
+  storyAlt?: string;
   consult: string;
   quote: string;
   offersKicker: string;
   offersTitle: string;
   offersText: string;
   offers: readonly TopicBlock[];
+  partsKicker?: string;
+  partsTitle?: string;
+  partsText?: string;
+  parts?: readonly TopicPart[];
+  gallery?: readonly TopicShot[];
   storyKicker: string;
   storyTitle: string;
   story: readonly string[];
@@ -38,10 +62,14 @@ export const topics = {
     label: "الطاقة",
     en: "Power",
     title: "طاقة تشغّل الري، مش مجرد مولد على جنب",
-    description: "مجموعات توليد، محركات، ولوحات تحكم لتشغيل أنظمة الري في الحقل.",
+    description:
+      "توريد وتركيب مولدات ومحركات ولوحات تحكم لتشغيل الري في الحقل، من شركة GTS للاستثمار الزراعي في مدينة 6 أكتوبر.",
     lead: "مجموعات التوليد والمحركات بتكمل تشغيل الموقع لما الكهرباء مش ثابتة. ومعاها لوحات التحكم اللي بتظبط دورة الري، وتساعد على ترشيد الاستهلاك من غير ما الإنتاج يتأثر.",
     image: photos.quote,
     alt: "حقل زراعي في ضوء الغروب",
+    heroImage: "/irrigation-photos/gen-plant.jpg",
+    heroAlt: "مجموعة توليد بمحرك ومولد على قاعدة",
+    imagePosition: "center",
     consult: "مرحبًا، حابب أطلب استشارة في حلول الطاقة.",
     quote: "مرحبًا، حابب أطلب عرض سعر لحلول الطاقة.",
     offersKicker: "نطاق الشغل",
@@ -106,6 +134,13 @@ export const topics = {
         text: "صيانة وقطع غيار، عشان التوقف ما ياخدش من الموسم.",
       },
     ],
+    gallery: [
+      { src: "/irrigation-photos/gen-cat.png", alt: "مجموعة مولدات صفراء بمقاسات مختلفة", caption: "تشكيل مقاسات" },
+      { src: "/irrigation-photos/gen-open.png", alt: "مولد أصفر بابه مفتوح على المحرك", caption: "مولد مفتوح" },
+      { src: "/irrigation-photos/gen-silent.png", alt: "مولد أصفر صامت مغلق", caption: "مولد صامت" },
+      { src: "/irrigation-photos/gen-hall.png", alt: "مولد أبيض داخل عنبر تشغيل", caption: "تركيب في الموقع" },
+      { src: "/irrigation-photos/gen-canopy.png", alt: "مولد أبيض مغلق بخطوط خضراء", caption: "مولد مغلق" },
+    ],
     ctaTitle: "قولنا وضع الكهرباء في الأرض.",
     ctaText: "نرجعلك بحل التشغيل المناسب لنوع الري والمحصول.",
   },
@@ -114,7 +149,8 @@ export const topics = {
     label: "الري",
     en: "Irrigation",
     title: "ري يتظبط على المساحة والمحصول",
-    description: "توريد وتركيب وصيانة الري المحوري والتنقيط والرش، مع قطع الغيار.",
+    description:
+      "توريد وتركيب وصيانة الري المحوري والتنقيط والرش، مع قطع الغيار ولوحات التحكم، من مخزون GTS في مدينة 6 أكتوبر.",
     lead: "توريد وتركيب وصيانة الري المحوري للمساحات الواسعة، وشبكات التنقيط والرش لما الدقة أهم. ومعاهم قطع الغيار ولوحات التحكم من عنوان واحد.",
     image: photos.hero,
     alt: "جهاز ري محوري فوق حقل أخضر",
@@ -144,6 +180,78 @@ export const topics = {
         num: "04",
         title: "التحكم والصيانة",
         text: "لوحات تشغّل الدورة أوتوماتيكيًا، ومتابعة الأعطال قبل ما توقف الجهاز. من أشهرها مشاكل الجيربوكس.",
+      },
+    ],
+    partsKicker: "المكونات",
+    partsTitle: "القطعة اللي بتوقف الجهاز، موجودة قبل ما الموسم يضيع",
+    partsText:
+      "البيفوت مش ماسورة وبس. الموتور والجيربوكس والسليبرنج والرشاش هما اللي بيخلّوا الدورة تكمل. بيتوردوا مع الجهاز، والمخزون في مدينة 6 أكتوبر عشان العطل ما يستناش شحنة.",
+    parts: [
+      {
+        title: "مواتير الحركة",
+        text: "الموتور اللي بيلف البرج على المساحة. لو وقف، الجهاز كله واقف، عشان كده بيتورد مع الجيربوكس مش لوحده.",
+        images: [
+          { src: "/irrigation-photos/motor.png", alt: "موتور حركة لجهاز الري المحوري مع صندوق تروس" },
+        ],
+      },
+      {
+        title: "قطع غيار أجهزة الري المحوري",
+        text: "علب التجميع والوصلات والجوانات اللي بتقفل دائرة المياه على البرج، مش قطعة تتطلب بعد ما التسريب يحصل.",
+        images: [
+          { src: "/irrigation-photos/pivot-parts.png", alt: "علب تجميع ووصلات وجوانات لأجهزة الري المحوري" },
+        ],
+      },
+      {
+        title: "هيكل معدني",
+        text: "زوايا مجلفنة وقاعدة البرج. الشاسيه اللي بيحمل الجهاز وهو بيلف على الطين، ويتراجع قبل ما الميل يوقف الحركة.",
+        images: [
+          { src: "/irrigation-photos/structure-angles.png", alt: "زوايا معدنية مجلفنة مثقبة لهيكل جهاز الري", fit: "cover" },
+          { src: "/irrigation-photos/structure-base.png", alt: "قاعدة تثبيت معدنية مجلفنة بعامود وأرجل", fit: "cover" },
+        ],
+      },
+      {
+        title: "سليبرنج",
+        text: "حلقة الانزلاق اللي بتنقل الكهرباء والتحكم والبرج لسه بيلف، من غير ما الكابل يتلف على نفسه.",
+        images: [
+          { src: "/irrigation-photos/slip-ring.png", alt: "مجموعة سليبرنج جاهزة للتوريد", fit: "cover" },
+        ],
+      },
+      {
+        title: "بلي وأولسيهات",
+        text: "رولمان بلي وجوانات الزيت. الاحتكاك هنا أول سبب إن الجزء يسخن، والغيار بيتغير قبل ما يوقف البرج.",
+        images: [
+          { src: "/irrigation-photos/bearings.png", alt: "رولمان بلي وجوانات زيت بأحجام مختلفة" },
+        ],
+      },
+      {
+        title: "كابلات",
+        text: "كابل التشغيل اللي بيمشي مع البرج لحد آخر رشاش. الوصلة جزء من الجهاز، مش سلك يتضاف بعد التركيب.",
+        images: [
+          { src: "/irrigation-photos/cables.png", alt: "كابل متعدد الأسلاك لأجهزة الري", fit: "cover" },
+        ],
+      },
+      {
+        title: "جيربوكسات",
+        text: "جيربوكس العجل أشهر سبب لتوقف البيفوت. بيتورد للموديل المطلوب، ومعاه طريقة حماية الجهاز في الموقع.",
+        images: [
+          { src: "/irrigation-photos/gearboxes.jpg", alt: "مجموعة جيربوكسات سوداء جاهزة للشحن", fit: "cover" },
+          { src: "/irrigation-photos/gearbox.png", alt: "قطاع في جيربوكس يوضّح الترس الداخلي" },
+        ],
+      },
+      {
+        title: "رشاشات ثابتة",
+        text: "الرشاش اللي بيوزع المياه على المساحة بثبات. الاختيار على المحصول والتغطية، مش على شكل القطعة بس.",
+        images: [
+          { src: "/irrigation-photos/sprinkler.png", alt: "رشاش ثابت بذراع أخضر" },
+          { src: "/irrigation-photos/sprinkler-field.png", alt: "رشاش يوزّع المياه على عشب أخضر", fit: "cover" },
+        ],
+      },
+      {
+        title: "محابس",
+        text: "المحابس اللي بتفتح وتقفل مسار المياه جوه الشبكة، عشان الدورة تتقفل على الجزء المطلوب مش على الخط كله.",
+        images: [
+          { src: "/irrigation-photos/valves.png", alt: "مجموعة محابس وبلوف بأحجام وأنواع مختلفة" },
+        ],
       },
     ],
     storyKicker: "الاختيار",
@@ -190,12 +298,67 @@ export const topics = {
     label: "الميكنة",
     en: "Mechanization",
     title: "المكنة اللي بتلف في الحقل، والأجزاء اللي بتحافظ عليها",
-    description: "أجهزة الري المحوري وأجزاؤها، مع الصيانة الميدانية وقطع الغيار.",
+    description:
+      "ميكنة زراعية وأجهزة الري المحوري وقطع غيارها، مع الصيانة الميدانية، من شركة GTS للاستثمار الزراعي في مدينة 6 أكتوبر.",
     lead: "الميكنة عند GTS هي جهاز الري وأجزاؤه المتحركة: الشاسيه، المحرك، الجيربوكس، والرشاشات. توريد وتركيب، وصيانة ميدانية قبل ما العطل يوقف الموسم.",
-    image: "/images/mechanization.jpg",
-    alt: "عجلات وهيكل جهاز الري المحوري داخل الحقل",
+    image: "/images/greens.jpg",
+    alt: "حقل أخضر بصفوف محصول وأشجار في الأفق",
+    imagePosition: "center 42%",
+    storyImage: "/irrigation-photos/harvester.jpg",
+    storyAlt: "حصادة خضراء تجمع محصول الذرة في الحقل",
     consult: "مرحبًا، حابب أطلب استشارة في الميكنة وقطع الغيار.",
     quote: "مرحبًا، حابب أطلب عرض سعر لقطع الميكنة.",
+    partsKicker: "المعدات",
+    partsTitle: "جرارات زراعية، وقطع غيار المكينة",
+    partsText:
+      "البندان ظاهرين تحت: المعدة نفسها، وبعدها الغيار اللي بيرجّعها تشتغل.",
+    parts: [
+      {
+        title: "جرارات زراعية",
+        text: "جرارات ومعدات حصاد للمساحة الواسعة. الاختيار على الأرض والمحصول، والتوريد والتركيب في الموقع.",
+        images: [
+          {
+            src: "/irrigation-photos/harvester.jpg",
+            alt: "حصادة خضراء تجمع محصولًا في الحقل",
+            caption: "حصادة",
+          },
+          {
+            src: "/irrigation-photos/tractor.png",
+            alt: "جرار زراعي أحمر بعجلات كبيرة",
+            caption: "جرار زراعي",
+          },
+          {
+            src: "/irrigation-photos/tractors.png",
+            alt: "مجموعة جرارات زراعية بألوان ومقاسات مختلفة",
+            caption: "تشكيل جرارات",
+          },
+        ],
+      },
+      {
+        title: "قطع غيار المكينة والمعدات الزراعية",
+        text: "جيربوكس، طلمبة، موتور، كلتش، فلاتر، وإطارات. الغيار بيتورد مع المعدة عشان العطل ما يطولش.",
+        images: [
+          { src: "/irrigation-photos/part-gearbox.png", alt: "جيربوكس أحمر", caption: "جيربوكس" },
+          { src: "/irrigation-photos/part-engine.png", alt: "موتور ديزل أخضر", caption: "موتور" },
+          { src: "/irrigation-photos/part-clutch.png", alt: "كلتش جرار", caption: "كلتش" },
+          { src: "/irrigation-photos/part-tire.png", alt: "كاوتش جرار", caption: "كاوتش" },
+          { src: "/irrigation-photos/part-bearing.png", alt: "بلي", caption: "بلي" },
+          { src: "/irrigation-photos/part-exhaust.png", alt: "شكمان جرار", caption: "شكمان" },
+          { src: "/irrigation-photos/part-pto.png", alt: "وصلة عمود إدارة", caption: "عمود إدارة" },
+          { src: "/irrigation-photos/part-fitting.png", alt: "وصلة هيدروليك", caption: "وصلة" },
+          { src: "/irrigation-photos/part-hydraulics.png", alt: "مخارج هيدروليك", caption: "مخارج هيدروليك" },
+          { src: "/irrigation-photos/part-gearbox.png", alt: "جيربوكس أحمر", caption: "جيربوكس" },
+          { src: "/irrigation-photos/part-pto.png", alt: "وصلة عمود إدارة", caption: "عمود إدارة" },
+          { src: "/irrigation-photos/part-engine.png", alt: "موتور ديزل أخضر", caption: "موتور" },
+          { src: "/irrigation-photos/part-bearing.png", alt: "بلي", caption: "بلي" },
+          { src: "/irrigation-photos/part-fitting.png", alt: "وصلة هيدروليك", caption: "وصلة" },
+          { src: "/irrigation-photos/part-hydraulics.png", alt: "مخارج هيدروليك", caption: "هيدروليك" },
+          { src: "/irrigation-photos/part-exhaust.png", alt: "شكمان جرار", caption: "شكمان" },
+          { src: "/irrigation-photos/part-clutch.png", alt: "كلتش جرار", caption: "كلتش" },
+          { src: "/irrigation-photos/part-tire.png", alt: "كاوتش جرار", caption: "كاوتش" },
+        ],
+      },
+    ],
     offersKicker: "المعدات",
     offersTitle: "الجهاز وأجزاؤه من نفس العنوان",
     offersText:
@@ -266,10 +429,12 @@ export const topics = {
     label: "التوريدات العمومية",
     en: "Supply",
     title: "توريد كامل من عنوان واحد",
-    description: "توريد أجهزة الري وقطع الغيار ولوحات التحكم والطاقة من عنوان واحد في 6 أكتوبر.",
+    description:
+      "توريد أجهزة الري وقطع الغيار ولوحات التحكم والمولدات من عنوان واحد في ميدان النجدة، مدينة 6 أكتوبر.",
     lead: "الأجهزة، قطع الغيار، لوحات التحكم، والمولدات. التوريد للمشروع الزراعي بيتلم في مكان واحد، بدل ما يتقسم على أكتر من مورد.",
-    image: photos.rows,
-    alt: "حقل أخضر بخطوط ري واضحة",
+    image: "/irrigation-photos/sup-pumps.jpg",
+    alt: "طلمبات ومحابس على خط توريد في الموقع",
+    imagePosition: "center 62%",
     consult: "مرحبًا، حابب أطلب استشارة في التوريدات.",
     quote: "مرحبًا، حابب أطلب عرض سعر لتوريد.",
     offersKicker: "بنود التوريد",
@@ -296,6 +461,56 @@ export const topics = {
         num: "04",
         title: "بعد التوريد",
         text: "التركيب والصيانة الميدانية بيكملوا التوريد، عشان الجهاز ما يفضلش كرتونة في المخزن.",
+      },
+    ],
+    partsKicker: "البنود",
+    partsTitle: "العدد والطلمبة والكابل، من نفس العنوان",
+    partsText:
+      "التوريد العمومي مش جهاز لوحده. العدد، المهمات الكهربائية، الكابلات، والطلمبات بيتلموا مع بعض عشان التركيب في الموقع ما يستناش مورد تاني.",
+    parts: [
+      {
+        title: "عدد يدوية",
+        text: "مفاتيح وبنس وزرادية. العدد اللي بيكمّل التركيب في الأرض، وبيتورد مع البند مش لما الشغل يقف.",
+        images: [
+          { src: "/irrigation-photos/sup-tools.png", alt: "طقم عدد يدوية: مفاتيح وبنس وزرادية" },
+        ],
+      },
+      {
+        title: "عدد كهربائية",
+        text: "دريل وصاروخ ومنشار. الشغل على اللوحة والخط محتاج العدة دي مع التوريد، مش بعد ما الفريق يوصل الموقع.",
+        images: [
+          { src: "/irrigation-photos/sup-power.png", alt: "طقم عدد كهربائية: دريل ومنشار وصاروخ" },
+        ],
+      },
+      {
+        title: "مهمات كهرباء",
+        text: "قواطع وكونتاكتور ووصلات. اللوحة ما تتوردش ناقصة، والمكونات تطلع من نفس العنوان مع الكابل.",
+        images: [
+          { src: "/irrigation-photos/sup-electric.png", alt: "مهمات كهرباء: قواطع وكونتاكتور ولفات أسلاك", fit: "cover" },
+        ],
+      },
+      {
+        title: "كابلات وأسلاك",
+        text: "كابل نحاس وأسلاك تشغيل بألوانها. المقاس على الحمل، والكابل يتورد مع اللوحة مش كبند يتضاف بعد التركيب.",
+        images: [
+          { src: "/irrigation-photos/sup-wires.png", alt: "تشكيلة كابلات وأسلاك بألوان ومقاسات مختلفة" },
+          { src: "/irrigation-photos/sup-cables.png", alt: "لفات كابلات نحاس وأسلاك معزولة", fit: "cover" },
+        ],
+      },
+      {
+        title: "طلمبات",
+        text: "طلمبة ومحابس وخط طرد. التوريد يشمل الموتور والخط، والتركيب في الموقع لحد ما المياه تطلع على التصرف المطلوب.",
+        images: [
+          { src: "/irrigation-photos/sup-pumps.jpg", alt: "طلمبات ومحابس على خط طرد في الموقع", fit: "cover" },
+          { src: "/irrigation-photos/sup-pumproom.png", alt: "طلمبة زرقاء داخل غرفة طلمبات", fit: "cover" },
+        ],
+      },
+      {
+        title: "وحدات ضخ",
+        text: "وحدتين ضخ على قاعدة واحدة. الاختيار على التصرف والضغط، والقاعدة تتظبط على مصدر المياه في الموقع.",
+        images: [
+          { src: "/irrigation-photos/sup-pumpset.png", alt: "وحدتا ضخ زرقاوان على قاعدة معدنية", fit: "cover" },
+        ],
       },
     ],
     storyKicker: "المقر",

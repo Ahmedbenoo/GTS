@@ -3,7 +3,9 @@
 import { useEffect, useRef, type MouseEvent } from "react";
 import Image from "next/image";
 import { highlights, photos, whatsappLink } from "@/lib/content";
+import { enOf } from "@/lib/en-map";
 import { Pivot } from "./Mark";
+import { Tx } from "./Tx";
 
 function StatIcon({ name }: { name: string }) {
   const pen = {
@@ -156,18 +158,31 @@ export function Hero({ active }: { active: boolean }) {
 
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <p className="kicker rise d1">مدينة 6 أكتوبر · هندسة زراعية متكاملة</p>
+          <p className="hero-name rise d1">
+            <span className="gts-ar">
+              جي تي إس <span className="hero-rest">للاستثمار الزراعي</span>
+            </span>
+            <span className="gts-en">
+              GTS <span className="hero-rest">Agricultural Investment</span>
+            </span>
+          </p>
+          <p className="kicker rise d1">
+            <Tx text="مدينة 6 أكتوبر · هندسة زراعية متكاملة" />
+          </p>
           <h1 className="display rise d2">
-            <span className="line">حلول زراعية متكاملة</span>
-            <span className="line gold">تحت سقف واحد</span>
+            <span className="line">
+              <Tx text="حلول زراعية متكاملة" />
+            </span>
+            <span className="line hero-white" style={{ color: "#fff" }}>
+              <Tx text="تحت سقف واحد" />
+            </span>
           </h1>
           <p className="lead rise d3">
-            توريد وتركيب وصيانة الري المحوري، والتنقيط، والرش. ومعاهم قطع الغيار،
-            لوحات التحكم، وحلول الطاقة. كل ما تحتاجه أرضك من عنوان واحد.
+            <Tx text="توريد وتركيب وصيانة الري المحوري، والتنقيط، والرش. ومعاهم قطع الغيار، لوحات التحكم، وحلول الطاقة. كل ما تحتاجه أرضك من عنوان واحد." />
           </p>
           <div className="hero-actions rise d4">
             <a
-              className="btn btn-gold"
+              className="btn btn-gold gts-lang-ar"
               href={whatsappLink(consult)}
               target="_blank"
               rel="noopener noreferrer"
@@ -175,12 +190,28 @@ export function Hero({ active }: { active: boolean }) {
               استشارة مجانية
             </a>
             <a
-              className="btn btn-ghost"
+              className="btn btn-gold gts-lang-en"
+              href={whatsappLink(enOf(consult))}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Free consultation
+            </a>
+            <a
+              className="btn btn-ghost gts-lang-ar"
               href={whatsappLink(quote)}
               target="_blank"
               rel="noopener noreferrer"
             >
               عرض سعر
+            </a>
+            <a
+              className="btn btn-ghost gts-lang-en"
+              href={whatsappLink(enOf(quote))}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Price quote
             </a>
           </div>
         </div>
@@ -197,8 +228,8 @@ export function Hero({ active }: { active: boolean }) {
           {highlights.map((item) => (
             <div key={item.k}>
               <StatIcon name={item.k} />
-              <dt>{item.k}</dt>
-              <dd>{item.v}</dd>
+              <dt><Tx text={item.k} /></dt>
+              <dd><Tx text={item.v} /></dd>
             </div>
           ))}
         </dl>

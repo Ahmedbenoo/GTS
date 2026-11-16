@@ -1,0 +1,70 @@
+.gts-band {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(227, 181, 106, 0.16), transparent 46%),
+    var(--forest);
+  color: var(--cream);
+  --muted: #cbbfa8;
+}
+
+.gts-grid {
+  display: grid;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.gts-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(227, 181, 106, 0.28);
+}
+
+.gts-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gts-story-copy h2 {
+  max-width: 14ch;
+}
+
+.gts-story-copy p {
+  margin: 0.85rem 0 0;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.gts-story-copy .kicker {
+  margin: 0 0 0.7rem;
+  color: var(--gold);
+}
+
+.gts-points {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gts-points li {
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  background: rgba(8, 20, 14, 0.38);
+  border: 1px solid rgba(227, 181, 106, 0.3);
+  font-weight: 800;
+}
+
+@media (min-width: 640px) {
+  .gts-points {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 980px) {
+  .gts-grid {
+    grid-template-columns: 1.08fr 0.92fr;
+  }
+}

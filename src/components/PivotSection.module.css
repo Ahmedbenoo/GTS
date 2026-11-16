@@ -1,0 +1,108 @@
+.gts-piv-split {
+  display: grid;
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.gts-piv-copy .h2 {
+  margin-top: 0.15rem;
+}
+
+.gts-piv-copy .lead {
+  max-width: none;
+}
+
+.gts-piv-points {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gts-piv-points li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.gts-piv-points li::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.5rem;
+  border-radius: 50%;
+  background: var(--gold);
+  flex: none;
+}
+
+.gts-piv-lead {
+  position: relative;
+  margin: 0;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #102117;
+}
+
+.gts-piv-lead img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gts-piv-lead figcaption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 2.2rem 1.1rem 0.9rem;
+  background: linear-gradient(transparent, rgba(8, 20, 14, 0.82));
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.gts-piv-catalog {
+  margin-top: 2.8rem;
+}
+
+.gts-piv-catalog .gts-card > span:last-child {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .gts-piv-points {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 980px) {
+  .gts-piv-split {
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 1.6rem;
+    align-items: stretch;
+  }
+
+  .gts-piv-copy {
+    grid-column: 1;
+    align-self: center;
+  }
+
+  .gts-piv-lead {
+    grid-column: 2;
+    height: 100%;
+    min-height: 460px;
+  }
+
+  .gts-piv-points {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem 1.4rem;
+    margin-top: 1.7rem;
+  }
+
+}

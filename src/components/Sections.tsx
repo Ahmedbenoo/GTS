@@ -1,16 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
-import {
-  company,
-  marquee,
-  photos,
-  reasons,
-  services,
-  steps,
-} from "@/lib/content";
+import { company, marquee, photos, reasons, steps } from "@/lib/content";
+import { Tx } from "./Tx";
 
 export function Marquee() {
   const row = [...marquee, ...marquee];
@@ -19,7 +9,7 @@ export function Marquee() {
       <div className="marquee-track">
         {row.map((item, index) => (
           <span className="marquee-item" key={`${item}-${index}`}>
-            {item}
+            <Tx text={item} />
             <i className="dot" />
           </span>
         ))}
@@ -39,70 +29,11 @@ function Head({
 }) {
   return (
     <header className="sec-head reveal">
-      <p className="kicker">{kicker}</p>
+      <p className="kicker"><Tx text={kicker} /></p>
       <span className="furrow" aria-hidden="true" />
-      <h2 className="h2">{title}</h2>
-      {text ? <p className="lead">{text}</p> : null}
+      <h2 className="h2"><Tx text={title} /></h2>
+      {text ? <p className="lead"><Tx text={text} /></p> : null}
     </header>
-  );
-}
-
-export function Services() {
-  const [active, setActive] = useState(0);
-  const current = services[active];
-
-  return (
-    <section className="section section-light" id="services">
-      <div className="wrap">
-        <Head
-          kicker="الخدمات"
-          title="كل ما تحتاجه الأرض في مكان واحد"
-          text="من الجهاز نفسه لحد آخر قطعة غيار. GTS بتغطي دورة الري كاملة: توريد، تركيب، تشغيل، وصيانة."
-        />
-        <div className="services-layout">
-          <div className="services-visual reveal reveal-photo">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current.image + current.num}
-                className="services-photo"
-                initial={{ opacity: 0, scale: 1.06 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.45 }}
-              >
-                <Image
-                  src={current.image}
-                  alt={current.alt}
-                  fill
-                  sizes="(max-width: 980px) 100vw, 46vw"
-                  className="cover"
-                />
-              </motion.div>
-            </AnimatePresence>
-            <span className="services-caption">{current.en}</span>
-          </div>
-          <div className="services-list reveal-group">
-            {services.map((service, index) => (
-              <button
-                key={service.num}
-                type="button"
-                className="service-item"
-                data-on={index === active ? "true" : undefined}
-                onMouseEnter={() => setActive(index)}
-                onFocus={() => setActive(index)}
-                onClick={() => setActive(index)}
-              >
-                <span className="service-num">{service.num}</span>
-                <span>
-                  <strong>{service.title}</strong>
-                  <small>{service.text}</small>
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -121,11 +52,11 @@ export function Quote() {
       <div className="quote-shade" />
       <blockquote className="wrap reveal">
         <p>
-          كل نقطة مياه
+          <Tx text="كل نقطة مياه" />
           <br />
-          تساهم في نجاح مشروعك.
+          <Tx text="تساهم في نجاح مشروعك." />
         </p>
-        <footer>GTS · مدينة 6 أكتوبر</footer>
+        <footer><Tx text="GTS · مدينة 6 أكتوبر" /></footer>
       </blockquote>
     </section>
   );
@@ -144,8 +75,8 @@ export function Why() {
           {reasons.map((reason) => (
             <article key={reason.num} className="reason">
               <span>{reason.num}</span>
-              <h3>{reason.title}</h3>
-              <p>{reason.text}</p>
+              <h3><Tx text={reason.title} /></h3>
+              <p><Tx text={reason.text} /></p>
             </article>
           ))}
         </div>
@@ -176,15 +107,14 @@ export function Systems() {
             </div>
             <div className="system-body">
               <p className="kicker">01</p>
-              <h3>الري المحوري</h3>
+              <h3><Tx text="الري المحوري" /></h3>
               <p>
-                أجهزة Center Pivot للتغطية الواسعة، مع توريد وتركيب وصيانة، ومتابعة
-                الأجزاء اللي بتوقف الجهاز زي الجيربوكس.
+                <Tx text="أجهزة Center Pivot للتغطية الواسعة، مع توريد وتركيب وصيانة، ومتابعة الأجزاء اللي بتوقف الجهاز زي الجيربوكس." />
               </p>
               <ul>
-                <li>توريد وتركيب وتشغيل</li>
-                <li>مناسب للمساحات الكبيرة</li>
-                <li>صيانة وقطع غيار</li>
+                <li><Tx text="توريد وتركيب وتشغيل" /></li>
+                <li><Tx text="مناسب للمساحات الكبيرة" /></li>
+                <li><Tx text="صيانة وقطع غيار" /></li>
               </ul>
             </div>
           </article>
@@ -200,15 +130,14 @@ export function Systems() {
             </div>
             <div className="system-body">
               <p className="kicker">02</p>
-              <h3>التنقيط والرش</h3>
+              <h3><Tx text="التنقيط والرش" /></h3>
               <p>
-                شبكات توصل المياه للنبات بدقة أعلى، مع لوحات تحكم تشغّل الدورة
-                بشكل أوتوماتيكي.
+                <Tx text="شبكات توصل المياه للنبات بدقة أعلى، مع لوحات تحكم تشغّل الدورة بشكل أوتوماتيكي." />
               </p>
               <ul>
-                <li>ري بالتنقيط</li>
-                <li>ري بالرش</li>
-                <li>تحكم أوتوماتيكي</li>
+                <li><Tx text="ري بالتنقيط" /></li>
+                <li><Tx text="ري بالرش" /></li>
+                <li><Tx text="تحكم أوتوماتيكي" /></li>
               </ul>
             </div>
           </article>
@@ -230,8 +159,8 @@ export function Process() {
           {steps.map((step) => (
             <li key={step.num} className="step">
               <span>{step.num}</span>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
+              <h3><Tx text={step.title} /></h3>
+              <p><Tx text={step.text} /></p>
             </li>
           ))}
         </ol>

@@ -1,22 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Contact } from "./Contact";
 import { Footer, WhatsFloat } from "./Footer";
 import { Hero } from "./Hero";
 import { Loader } from "./Loader";
 import { Navbar } from "./Navbar";
 import { ScrollMotion } from "./ScrollMotion";
-import { Marquee, Process, Quote, Services, Systems, Why } from "./Sections";
+import { Marquee, Process, Quote, Systems, Why } from "./Sections";
+import { Services } from "./Services";
 
 export function HomePage() {
   const [showLoader, setShowLoader] = useState(true);
   const [booted, setBooted] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const seen = sessionStorage.getItem("gts-intro") === "1";
     if (reduceMotion || seen) {
+      document.documentElement.classList.add("gts-skip-intro");
       setShowLoader(false);
       setBooted(true);
     }

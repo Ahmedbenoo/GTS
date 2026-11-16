@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { Pivot } from "./Mark";
+import { Tx } from "./Tx";
 
 const RADIUS = 54;
 const CIRC = 2 * Math.PI * RADIUS;
@@ -57,25 +57,18 @@ export function Loader({
     };
   }, []);
 
+  useEffect(() => {
+    if (phase !== "exit") return;
+    const timer = window.setTimeout(() => doneRef.current(), 1050);
+    return () => window.clearTimeout(timer);
+  }, [phase]);
+
   return (
-    <motion.div
-      className="loader"
+    <div
+      className={phase === "exit" ? "loader is-exit" : "loader"}
       role="status"
       aria-live="polite"
-      aria-label="جاري فتح الموقع"
-      initial={false}
-      animate={{
-        clipPath:
-          phase === "exit" ? "circle(0% at 50% 46%)" : "circle(150% at 50% 46%)",
-      }}
-      transition={
-        phase === "exit"
-          ? { duration: 1.05, ease: [0.76, 0, 0.24, 1] }
-          : { duration: 0 }
-      }
-      onAnimationComplete={() => {
-        if (phase === "exit") doneRef.current();
-      }}
+      aria-label="جاري فتح الموقع · Opening the site"
     >
       <div className="loader-core">
         <div className="loader-ring-wrap">
@@ -94,12 +87,14 @@ export function Loader({
         </div>
         <p className="loader-kicker">GTS Agriculture</p>
         <p className="loader-brand">GTS</p>
-        <p className="loader-sub">للاستثمار الزراعي</p>
+        <p className="loader-sub">
+          <Tx text="للاستثمار الزراعي" />
+        </p>
         <p className="loader-count">{String(progress).padStart(3, "0")}</p>
       </div>
       <div className="loader-line" aria-hidden="true">
         <span style={{ width: `${progress}%` }} />
       </div>
-    </motion.div>
+    </div>
   );
 }

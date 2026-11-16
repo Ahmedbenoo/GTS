@@ -37,10 +37,10 @@ export const phones = [
 
 export const nav = [
   { href: "/", label: "الرئيسية" },
-  { href: "/energy", label: "الطاقة" },
   { href: "/irrigation", label: "الري" },
-  { href: "/mechanization", label: "الميكنة" },
+  { href: "/energy", label: "الطاقة" },
   { href: "/supplies", label: "التوريدات العمومية" },
+  { href: "/mechanization", label: "الميكنة" },
 ] as const;
 
 export const marquee = [

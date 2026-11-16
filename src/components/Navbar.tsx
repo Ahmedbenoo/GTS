@@ -3,7 +3,9 @@
 import { useEffect, useState, type AnimationEvent } from "react";
 import { usePathname } from "next/navigation";
 import { company, nav } from "@/lib/content";
+import { LangToggle } from "./Language";
 import { Logo } from "./Mark";
+import { Tx } from "./Tx";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -64,11 +66,12 @@ export function Navbar() {
           .filter(Boolean)
           .join(" ")}
       >
-        <a className="nav-brand" href="/" aria-label={company.fullName}>
-          <Logo priority />
+        <a className="nav-brand" href="/">
+          <Logo />
+          <span className="sr-only"><Tx text={company.fullName} /></span>
         </a>
 
-        <nav className="nav-links" aria-label="التنقل الرئيسي">
+        <nav className="nav-links" aria-label="التنقل الرئيسي · Main">
           {nav.map((item) => {
             const active = pathname === item.href;
             return (
@@ -78,33 +81,34 @@ export function Navbar() {
                 className={active ? "is-active" : undefined}
                 aria-current={active ? "page" : undefined}
               >
-                {item.label}
+                <Tx text={item.label} />
               </a>
             );
           })}
         </nav>
 
-        <a className="btn btn-gold nav-cta" href="/#contact">
-          تواصل معنا
-        </a>
-
-        <button
-          type="button"
-          className={menuVisible ? "nav-burger is-open" : "nav-burger"}
-          aria-expanded={phase === "open"}
-          aria-label={phase === "open" ? "إغلاق القائمة" : "فتح القائمة"}
-          onClick={toggleMenu}
-        >
-          <span />
-          <span />
-        </button>
-        <span className="sr-only">{company.fullName}</span>
+        <div className="nav-end">
+          <LangToggle />
+          <a className="btn btn-gold nav-cta" href="/#contact">
+            <Tx text="تواصل معنا" />
+          </a>
+          <button
+            type="button"
+            className={menuVisible ? "nav-burger is-open" : "nav-burger"}
+            aria-expanded={phase === "open"}
+            aria-label={phase === "open" ? "إغلاق القائمة · Close menu" : "فتح القائمة · Open menu"}
+            onClick={toggleMenu}
+          >
+            <span />
+            <span />
+          </button>
+        </div>
       </header>
 
       {menuVisible ? (
         <nav
           className={phase === "closing" ? "nav-menu is-closing" : "nav-menu is-open"}
-          aria-label="قائمة الجوال"
+          aria-label="قائمة الجوال · Menu"
           onAnimationEnd={onMenuAnimationEnd}
         >
           {nav.map((item, index) => {
@@ -118,7 +122,7 @@ export function Navbar() {
                 onClick={closeMenu}
               >
                 <em>{String(index + 1).padStart(2, "0")}</em>
-                {item.label}
+                <Tx text={item.label} />
               </a>
             );
           })}
@@ -127,7 +131,7 @@ export function Navbar() {
             href="/#contact"
             onClick={closeMenu}
           >
-            تواصل معنا
+            <Tx text="تواصل معنا" />
           </a>
         </nav>
       ) : null}

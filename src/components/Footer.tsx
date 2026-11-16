@@ -1,33 +1,37 @@
 import { company, nav, phones, whatsappLink } from "@/lib/content";
+import { enOf } from "@/lib/en-map";
 import { Logo, FacebookIcon, WhatsAppIcon } from "./Mark";
+import { Tx } from "./Tx";
 
 export function Footer() {
   return (
     <footer className="footer">
       <div className="wrap footer-grid reveal-group">
         <div>
-          <a className="nav-brand" href="/" aria-label={company.fullName}>
+          <a className="nav-brand" href="/">
             <Logo />
+            <span className="sr-only"><Tx text={company.fullName} /></span>
           </a>
-          <p>{company.tagline}</p>
+          <p><Tx text={company.tagline} /></p>
         </div>
         <div>
-          <p className="footer-label">الصفحات</p>
+          <p className="footer-label"><Tx text="الصفحات" /></p>
           <ul>
             {nav.map((item) => (
               <li key={item.href}>
-                <a href={item.href}>{item.label}</a>
+                <a href={item.href}><Tx text={item.label} /></a>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <p className="footer-label">التواصل</p>
+          <p className="footer-label"><Tx text="التواصل" /></p>
           <ul>
             {phones.map((phone) => (
               <li key={phone.tel}>
                 <a href={`tel:${phone.tel}`}>
-                  {phone.label}:{" "}
+                  <Tx text={phone.label} />
+                  {": "}
                   <span className="num" dir="ltr">
                     {phone.display}
                   </span>
@@ -40,7 +44,7 @@ export function Footer() {
                   href={company.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="فيسبوك"
+                  aria-label="فيسبوك · Facebook"
                 >
                   <FacebookIcon />
                 </a>
@@ -51,7 +55,7 @@ export function Footer() {
       </div>
       <div className="wrap footer-base">
         <p>
-          جميع الحقوق محفوظة ل {company.fullName}{" "}
+          <Tx text="جميع الحقوق محفوظة ل" /> <Tx text={company.fullName} />{" "}
           <span className="num">© 2026</span>
         </p>
       </div>
@@ -59,16 +63,29 @@ export function Footer() {
   );
 }
 
+const waText = "مرحبًا، حابب أستفسر عن خدمات GTS للاستثمار الزراعي.";
+
 export function WhatsFloat() {
   return (
-    <a
-      className="wa-float"
-      href={whatsappLink("مرحبًا، حابب أستفسر عن خدمات GTS للاستثمار الزراعي.")}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="تواصل عبر واتساب"
-    >
-      <WhatsAppIcon />
-    </a>
+    <>
+      <a
+        className="wa-float gts-lang-ar"
+        href={whatsappLink(waText)}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="تواصل عبر واتساب"
+      >
+        <WhatsAppIcon />
+      </a>
+      <a
+        className="wa-float gts-lang-en"
+        href={whatsappLink(enOf(waText))}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contact on WhatsApp"
+      >
+        <WhatsAppIcon />
+      </a>
+    </>
   );
 }
