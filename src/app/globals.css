@@ -768,6 +768,7 @@ html.gts-skip-intro .loader { display: none !important; }
 .section-dark { background: var(--ink); color: var(--cream); --muted: #cbbfa8; }
 .section-forest { background: var(--forest); color: var(--cream); --muted: #cbbfa8; }
 .sec-head { max-width: 46rem; margin-bottom: 2.2rem; }
+#systems .sec-head { max-width: 50rem; }
 
 .services-layout { display: grid; gap: 1.4rem; }
 .services-visual {
@@ -780,7 +781,19 @@ html.gts-skip-intro .loader { display: none !important; }
 .services-photo {
   position: absolute;
   inset: 0;
+  display: block;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
   animation: service-in 0.45s ease;
+  cursor: zoom-in;
+}
+.services-photo[data-fit="contain"] { background: #fff; }
+.services-photo[data-fit="contain"] img { object-fit: contain; }
+.services-photo:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -8px;
 }
 @keyframes service-in {
   from { opacity: 0; transform: scale(1.06); }
@@ -798,6 +811,86 @@ html.gts-skip-intro .loader { display: none !important; }
   font-family: var(--font-outfit), sans-serif;
   letter-spacing: 0.08em;
   font-size: 0.78rem;
+  pointer-events: none;
+}
+.svc-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 1.2rem;
+  background: rgba(8, 20, 14, 0.88);
+}
+.svc-dialog {
+  position: relative;
+  direction: rtl;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
+  width: min(1100px, 100%);
+  outline: none;
+}
+.svc-frame { margin: 0; min-width: 0; }
+.svc-shot {
+  position: relative;
+  display: block;
+  height: min(74vh, 680px);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+.svc-contain { object-fit: contain; }
+.svc-frame figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  color: var(--cream);
+  font-weight: 800;
+}
+.svc-frame figcaption span {
+  color: var(--gold);
+  font-family: var(--font-outfit), sans-serif;
+}
+.svc-nav,
+.svc-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(227, 181, 106, 0.55);
+  background: var(--forest);
+  color: var(--gold);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+.svc-nav {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+.svc-nav svg { width: 26px; height: 26px; }
+.svc-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  min-height: 44px;
+  padding: 0 1rem;
+  border-radius: 999px;
+}
+@media (max-width: 699px) {
+  .svc-nav { width: 42px; height: 42px; }
+  .svc-dialog { grid-template-columns: 1fr; }
+  .svc-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .svc-nav-prev { right: 0.4rem; }
+  .svc-nav-next { left: 0.4rem; }
 }
 .service-item {
   width: 100%;

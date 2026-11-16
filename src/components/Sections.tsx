@@ -91,7 +91,7 @@ export function Systems() {
       <div className="wrap">
         <Head
           kicker="الأنظمة"
-          title="محوري للمساحات الواسعة. تنقيط ورش للدقة."
+          title="سنتر بيفوت للمساحات الواسعة. تنقيط ورش للدقة."
           text="النظام بيتختار على الأرض: مصدر المياه، المحصول، والمساحة. الصور هنا تعبيرية لشكل الأنظمة."
         />
         <div className="systems reveal-group">

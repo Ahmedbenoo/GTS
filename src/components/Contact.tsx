@@ -133,7 +133,7 @@ export function Contact() {
           <p className="kicker"><Tx text="تواصل" /></p>
           <span className="furrow" aria-hidden="true" />
           <h2 className="h2 contact-title">
-            <Tx text="قولنا نوع الأرض، ونرجعلك بالنظام المناسب." />
+            <Tx text="سيبلنا مشكلتك وهنرد عليك بالحل المناسب" />
           </h2>
           <p className="lead">
             <span className="gts-ar">

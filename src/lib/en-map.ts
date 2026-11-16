@@ -66,7 +66,7 @@ export const enMap: Record<string, string> = {
   "أنظمة تساعد على ترشيد الاستهلاك، مع الحفاظ على إنتاجية المحصول.":
     "Systems that help ration consumption while keeping crop yield.",
   "الأنظمة": "Systems",
-  "محوري للمساحات الواسعة. تنقيط ورش للدقة.": "Pivot for wide areas. Drip and spray for precision.",
+  "سنتر بيفوت للمساحات الواسعة. تنقيط ورش للدقة.": "Center pivot for wide areas. Drip and spray for precision.",
   "النظام بيتختار على الأرض: مصدر المياه، المحصول، والمساحة. الصور هنا تعبيرية لشكل الأنظمة.":
     "The system is chosen on the land: the water source, the crop, and the area. The photos suggest how the systems look.",
   "أجهزة Center Pivot للتغطية الواسعة، مع توريد وتركيب وصيانة، ومتابعة الأجزاء اللي بتوقف الجهاز زي الجيربوكس.":
@@ -92,7 +92,7 @@ export const enMap: Record<string, string> = {
   "صيانة وقطع غيار ومتابعة، عشان التوقف ما ياخدش من الموسم.":
     "Service, spare parts, and follow-up, so downtime does not take from the season.",
   "تواصل": "Contact",
-  "قولنا نوع الأرض، ونرجعلك بالنظام المناسب.": "Tell us about the land, and we'll come back with the right system.",
+  "سيبلنا مشكلتك وهنرد عليك بالحل المناسب": "Leave us your problem, and we'll get back with the right solution.",
   "موبايل / واتساب": "Mobile / WhatsApp",
   "المبيعات": "Sales",
   "العنوان": "Address",
@@ -267,9 +267,9 @@ export const enMap: Record<string, string> = {
   "جرار زراعي": "Farm tractor",
   "تشكيل جرارات": "Tractor range",
   "قطع غيار المكينة والمعدات الزراعية": "Engine and farm-equipment spare parts",
-  "جيربوكس، طلمبة، موتور، كلتش، فلاتر، وإطارات. الغيار بيتورد مع المعدة عشان العطل ما يطولش.":
+  "جيربوكس، طلمبة، محرك، كلتش، فلاتر، وإطارات. الغيار بيتورد مع المعدة عشان العطل ما يطولش.":
     "Gearbox, pump, engine, clutch, filters, and tires. The spare is supplied with the machine so a fault does not drag on.",
-  "موتور": "Engine",
+  "محرك": "Engine",
   "كلتش": "Clutch",
   "كاوتش": "Tire",
   "بلي": "Bearing",

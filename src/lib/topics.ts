@@ -336,10 +336,10 @@ export const topics = {
       },
       {
         title: "قطع غيار المكينة والمعدات الزراعية",
-        text: "جيربوكس، طلمبة، موتور، كلتش، فلاتر، وإطارات. الغيار بيتورد مع المعدة عشان العطل ما يطولش.",
+        text: "جيربوكس، طلمبة، محرك، كلتش، فلاتر، وإطارات. الغيار بيتورد مع المعدة عشان العطل ما يطولش.",
         images: [
           { src: "/irrigation-photos/part-gearbox.png", alt: "جيربوكس أحمر", caption: "جيربوكس" },
-          { src: "/irrigation-photos/part-engine.png", alt: "موتور ديزل أخضر", caption: "موتور" },
+          { src: "/irrigation-photos/part-engine.png", alt: "محرك ديزل أخضر", caption: "محرك" },
           { src: "/irrigation-photos/part-clutch.png", alt: "كلتش جرار", caption: "كلتش" },
           { src: "/irrigation-photos/part-tire.png", alt: "كاوتش جرار", caption: "كاوتش" },
           { src: "/irrigation-photos/part-bearing.png", alt: "بلي", caption: "بلي" },
@@ -349,7 +349,7 @@ export const topics = {
           { src: "/irrigation-photos/part-hydraulics.png", alt: "مخارج هيدروليك", caption: "مخارج هيدروليك" },
           { src: "/irrigation-photos/part-gearbox.png", alt: "جيربوكس أحمر", caption: "جيربوكس" },
           { src: "/irrigation-photos/part-pto.png", alt: "وصلة عمود إدارة", caption: "عمود إدارة" },
-          { src: "/irrigation-photos/part-engine.png", alt: "موتور ديزل أخضر", caption: "موتور" },
+          { src: "/irrigation-photos/part-engine.png", alt: "محرك ديزل أخضر", caption: "محرك" },
           { src: "/irrigation-photos/part-bearing.png", alt: "بلي", caption: "بلي" },
           { src: "/irrigation-photos/part-fitting.png", alt: "وصلة هيدروليك", caption: "وصلة" },
           { src: "/irrigation-photos/part-hydraulics.png", alt: "مخارج هيدروليك", caption: "هيدروليك" },
