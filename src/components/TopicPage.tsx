@@ -82,15 +82,17 @@ export function TopicPage({ topic }: { topic: Topic }) {
               <h2 className="h2"><Tx text={topic.offersTitle} /></h2>
               <p className="lead"><Tx text={topic.offersText} /></p>
             </header>
-            <div className="topic-grid reveal-group">
-              {topic.offers.map((item) => (
-                <article key={item.num} className="topic-card">
-                  <span>{item.num}</span>
-                  <h3><Tx text={item.title} /></h3>
-                  <p><Tx text={item.text} /></p>
-                </article>
-              ))}
-            </div>
+            {topic.offers.length > 0 ? (
+              <div className="topic-grid reveal-group">
+                {topic.offers.map((item) => (
+                  <article key={item.num} className="topic-card">
+                    <span>{item.num}</span>
+                    <h3><Tx text={item.title} /></h3>
+                    <p><Tx text={item.text} /></p>
+                  </article>
+                ))}
+              </div>
+            ) : null}
           </div>
         </section>
 

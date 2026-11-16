@@ -275,7 +275,6 @@ export const enMap: Record<string, string> = {
   "كاوتش": "Tire",
   "بلي": "Bearing",
   "شكمان": "Exhaust",
-  "عمود إدارة": "PTO shaft",
   "مخارج هيدروليك": "Hydraulic outlets",
   "هيدروليك": "Hydraulics",
   "من الجرار اللي يخدم الأرض، للحصادة اللي تلم المحصول. التشكيل بمقاسات وقدرات مختلفة، والتوريد والتركيب في الموقع حسب المساحة.":
@@ -353,11 +352,8 @@ export const enMap: Record<string, string> = {
   "وحدات ضخ": "Pump sets",
   "وحدتين ضخ على قاعدة واحدة. الاختيار على التصرف والضغط، والقاعدة تتظبط على مصدر المياه في الموقع.":
     "Two pump sets on one base. The choice follows flow and pressure, and the base is set to the water source on site.",
-  "التوريد بيخرج من 6 أكتوبر": "The supply leaves from 6th of October",
-  "المقر في مدينة 6 أكتوبر، الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر. من هنا بيتلم الجهاز وقطع الغيار ولوحة التحكم والطاقة.":
-    "The office is in 6th of October City, Sheikh Zayed — Villa 68, First Neighborhood, 11th District. The machine, spare parts, control panel, and power are gathered from here.",
-  "جودة تقدر تبني عليها قرارك، بمكونات واضحة. سقف واحد للمشروع الزراعي، من المعاينة لحد ما الجهاز يشتغل.":
-    "Quality you can base a decision on, with clear components. One roof for the farm project, from the site visit until the machine is running.",
+  "مدينة 6 أكتوبر، الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر.":
+    "6th of October City, Sheikh Zayed — Villa 68, First Neighborhood, 11th District.",
   "ري ومحركات وغيار": "Irrigation, engines, and spares",
   "مجموعات توليد": "Generating sets",
   "تركيب وصيانة ميدانية": "Installation and field service",
