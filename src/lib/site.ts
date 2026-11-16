@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import { company, phones, services } from "@/lib/content";
 
 /** Set NEXT_PUBLIC_SITE_URL to the real domain before publishing. */
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3010")
-).replace(/\/$/, "");
+const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const vercelHost = (process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || "").replace(
+  /^https?:\/\//,
+  "",
+);
+export const siteUrl = (configured || (vercelHost ? `https://${vercelHost}` : "http://localhost:3010")).replace(
+  /\/$/,
+  "",
+);
 
 export const homeTitle = "GTS للاستثمار الزراعي | ري محوري وتنقيط وميكنة";
 

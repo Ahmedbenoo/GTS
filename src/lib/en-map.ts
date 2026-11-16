@@ -76,7 +76,6 @@ export const enMap: Record<string, string> = {
   "صيانة وقطع غيار": "Service and spare parts",
   "شبكات توصل المياه للنبات بدقة أعلى، مع لوحات تحكم تشغّل الدورة بشكل أوتوماتيكي.":
     "Networks that deliver water to the plant more precisely, with control panels that run the cycle automatically.",
-  "ري بالتنقيط": "Drip irrigation",
   "تحكم أوتوماتيكي": "Automatic control",
   "طريقة العمل": "How we work",
   "من المعاينة لحد ما الجهاز يشتغل": "From the site visit until the machine is running",
