@@ -1,21 +1,25 @@
-.gts-piv-split {
-  display: grid;
-  gap: 1.4rem;
-  align-items: stretch;
-}
-
 .gts-piv-copy .h2 {
   margin-top: 0.15rem;
+}
+
+.gts-piv-copy {
+  margin-top: 1.5rem;
 }
 
 .gts-piv-copy .lead {
   max-width: none;
 }
 
+.gts-piv-strong {
+  color: var(--ink);
+  font-weight: 800;
+}
+
 .gts-piv-points {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 0.75rem;
-  margin: 1.5rem 0 0;
+  margin: 1rem 0 0.35rem;
   padding: 0;
   list-style: none;
 }
@@ -42,7 +46,7 @@
 .gts-piv-lead {
   position: relative;
   margin: 0;
-  height: 320px;
+  height: min(52vw, 420px);
   overflow: hidden;
   border-radius: 24px;
   background: #102117;
@@ -69,40 +73,33 @@
 
 .gts-piv-catalog {
   margin-top: 2.8rem;
+  padding: 2.8rem 0 6.4rem;
+  background: #fff;
+  color: var(--ink);
+  border-top: 1px solid rgba(8, 20, 14, 0.08);
+}
+
+.gts-piv-catalog .gts-parts-head .h2 {
+  color: var(--ink);
+}
+
+.gts-piv-catalog .gts-parts-head p:not(.kicker) {
+  color: #55685d;
 }
 
 .gts-piv-catalog .gts-card > span:last-child {
   display: none;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 640px) {
   .gts-piv-points {
     grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 1.2rem;
   }
 }
 
 @media (min-width: 980px) {
-  .gts-piv-split {
-    grid-template-columns: 0.92fr 1.08fr;
-    gap: 1.6rem;
-    align-items: stretch;
-  }
-
-  .gts-piv-copy {
-    grid-column: 1;
-    align-self: center;
-  }
-
   .gts-piv-lead {
-    grid-column: 2;
-    height: 100%;
-    min-height: 460px;
+    height: 480px;
   }
-
-  .gts-piv-points {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.85rem 1.4rem;
-    margin-top: 1.7rem;
-  }
-
 }

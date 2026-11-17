@@ -22,7 +22,7 @@ function StatIcon({ name }: { name: string }) {
     "aria-hidden": true,
   };
 
-  if (name === "محوري") {
+  if (name === "الري المحوري") {
     return (
       <svg {...pen}>
         <line x1="2.6" y1="7.4" x2="21.4" y2="7.4" />
@@ -40,7 +40,7 @@ function StatIcon({ name }: { name: string }) {
     );
   }
 
-  if (name === "تنقيط / رش") {
+  if (name === "الري بالتنقيط والرش") {
     return (
       <svg {...pen}>
         <line x1="3" y1="5.2" x2="21" y2="5.2" />
@@ -174,11 +174,11 @@ export function Hero({ active }: { active: boolean }) {
               <Tx text="حلول زراعية متكاملة" />
             </span>
             <span className="line hero-white" style={{ color: "#fff" }}>
-              <Tx text="تحت سقف واحد" />
+              <Tx text="في مكان واحد" />
             </span>
           </h1>
           <p className="lead rise d3">
-            <Tx text="توريد وتركيب وصيانة الري المحوري، والتنقيط، والرش. ومعاهم قطع الغيار، لوحات التحكم، وحلول الطاقة. كل ما تحتاجه أرضك من عنوان واحد." />
+            <Tx text="نقدّم حلولًا زراعية متكاملة تشمل أنظمة الري المحوري والتنقيط والرش، وقطع الغيار، وحفر الآبار؛ لتلبية احتياجات مشروعك الزراعي." />
           </p>
           <div className="hero-actions rise d4">
             <a

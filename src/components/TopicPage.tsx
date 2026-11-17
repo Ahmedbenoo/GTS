@@ -130,11 +130,13 @@ export function TopicPage({ topic }: { topic: Topic }) {
                 {topic.story.map((paragraph) => (
                   <p key={paragraph}><Tx text={paragraph} /></p>
                 ))}
-                <ul className="gts-points">
-                  {topic.points.map((point) => (
-                    <li key={point}><Tx text={point} /></li>
-                  ))}
-                </ul>
+                {topic.points.length > 0 ? (
+                  <ul className="gts-points">
+                    {topic.points.map((point) => (
+                      <li key={point}><Tx text={point} /></li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </div>
           </section>
@@ -156,11 +158,13 @@ export function TopicPage({ topic }: { topic: Topic }) {
                 {topic.story.map((paragraph) => (
                   <p key={paragraph}><Tx text={paragraph} /></p>
                 ))}
-                <ul className="topic-points">
-                  {topic.points.map((point) => (
-                    <li key={point}><Tx text={point} /></li>
-                  ))}
-                </ul>
+                {topic.points.length > 0 ? (
+                  <ul className="topic-points">
+                    {topic.points.map((point) => (
+                      <li key={point}><Tx text={point} /></li>
+                    ))}
+                  </ul>
+                ) : null}
               </div>
             </div>
           </section>
@@ -185,24 +189,26 @@ export function TopicPage({ topic }: { topic: Topic }) {
           </div>
         </section>
 
-        <section className="section section-forest">
-          <div className="wrap topic-cta reveal">
-            <p className="kicker"><Tx text={topic.label} /></p>
-            <h2 className="h2"><Tx text={topic.ctaTitle} /></h2>
-            <p className="lead"><Tx text={topic.ctaText} /></p>
-            <div className="hero-actions">
-              <a className="btn btn-gold gts-lang-ar" href={whatsappLink(topic.consult)} target="_blank" rel="noopener noreferrer">
-                كلمنا على واتساب
-              </a>
-              <a className="btn btn-gold gts-lang-en" href={whatsappLink(enOf(topic.consult))} target="_blank" rel="noopener noreferrer">
-                Message us on WhatsApp
-              </a>
-              <a className="btn btn-ghost" href="/#contact">
-                <Tx text="نموذج التواصل" />
-              </a>
+        {topic.ctaTitle ? (
+          <section className="section section-forest">
+            <div className="wrap topic-cta reveal">
+              <p className="kicker"><Tx text={topic.label} /></p>
+              <h2 className="h2"><Tx text={topic.ctaTitle} /></h2>
+              <p className="lead"><Tx text={topic.ctaText} /></p>
+              <div className="hero-actions">
+                <a className="btn btn-gold gts-lang-ar" href={whatsappLink(topic.consult)} target="_blank" rel="noopener noreferrer">
+                  كلمنا على واتساب
+                </a>
+                <a className="btn btn-gold gts-lang-en" href={whatsappLink(enOf(topic.consult))} target="_blank" rel="noopener noreferrer">
+                  Message us on WhatsApp
+                </a>
+                <a className="btn btn-ghost" href="/#contact">
+                  <Tx text="نموذج التواصل" />
+                </a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
       </main>
       <Footer />
       <WhatsFloat />

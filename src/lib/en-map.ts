@@ -2,21 +2,27 @@ export const enMap: Record<string, string> = {
   "للاستثمار الزراعي": "Agricultural Investment",
   "مدينة 6 أكتوبر · هندسة زراعية متكاملة": "6th of October City · Integrated agricultural engineering",
   "حلول زراعية متكاملة": "Integrated agricultural solutions",
+  "في مكان واحد": "in one place",
   "تحت سقف واحد": "under one roof",
-  "توريد وتركيب وصيانة الري المحوري، والتنقيط، والرش. ومعاهم قطع الغيار، لوحات التحكم، وحلول الطاقة. كل ما تحتاجه أرضك من عنوان واحد.":
-    "Supply, installation, and service for center-pivot, drip, and spray irrigation, with spare parts, control panels, and power. Everything your land needs, from one address.",
+  "نقدّم حلولًا زراعية متكاملة تشمل أنظمة الري المحوري والتنقيط والرش، وقطع الغيار، وحفر الآبار؛ لتلبية احتياجات مشروعك الزراعي.":
+    "We provide integrated agricultural solutions that include center-pivot, drip, and spray irrigation systems, spare parts, and well drilling to meet the needs of your farm project.",
   "استشارة مجانية": "Free consultation",
   "عرض سعر": "Price quote",
   "محوري": "Pivot",
   "توريد وتركيب وصيانة": "Supply, installation, and service",
+  "أنظمة ري محوري تناسب احتياجات مشروعك": "Center-pivot systems that fit your project needs",
   "تنقيط / رش": "Drip / spray",
   "شبكات حسب المحصول": "Networks for the crop",
+  "الري بالتنقيط والرش": "Drip and spray irrigation",
+  "حلول ري تساعدك على اختيار النظام المناسب لأرضك":
+    "Irrigation solutions that help you choose the right system for your land",
   "قطع الغيار": "Spare parts",
   "قطع غيار": "Spare parts",
+  "قطع غيار المعدات الزراعية وأنظمة الري":
+    "Spare parts for farm equipment and irrigation systems",
   "الجيربوكس": "Gearbox",
   "قولنا وضع الكهرباء في الأرض.": "Tell us about the power on the land.",
   "نرجعلك بحل التشغيل المناسب لنوع الري والمحصول.": "We'll come back with the power setup that fits the irrigation and the crop.",
-  "في مكان واحد": "In one place",
   "المقر": "Headquarters",
   "6 أكتوبر": "6th of October",
   "ري محوري": "Center pivot",
@@ -110,7 +116,7 @@ export const enMap: Record<string, string> = {
   "التواصل": "Contact",
   "جميع الحقوق محفوظة ل": "All rights reserved for",
   "GTS للاستثمار الزراعي": "GTS Agricultural Investment",
-  "حلول زراعية متكاملة تحت سقف واحد": "Integrated agricultural solutions under one roof",
+  "حلول زراعية متكاملة في مكان واحد": "Integrated agricultural solutions in one place",
   "كلمنا على واتساب": "Message us on WhatsApp",
   "نموذج التواصل": "Contact form",
   "مرحبًا، حابب أطلب استشارة مجانية.": "Hello, I would like a free consultation.",
@@ -163,22 +169,22 @@ export const enMap: Record<string, string> = {
   "مولد صامت": "Silent generator",
   "تركيب في الموقع": "Installed on site",
   "مولد مغلق": "Closed generator",
-  "المولد يتظبط على حمل الري، مش على شكل الكتالوج":
-    "The generator is sized to the irrigation load, not to the catalog photo",
-  "قبل الاختيار بنحسب حمل التشغيل: بيفوت ولا تنقيط ولا رش، وعدد ساعات الشغل، والكهرباء الموجودة في الأرض. المجموعة بتطلع بالمقاس ده، ومعاها لوحة التحكم اللي بتشغّل الدورة.":
-    "Before the choice, we calculate the running load: pivot, drip, or spray, the hours of work, and the power already on the land. The set is built to that size, with the control panel that runs the cycle.",
-  "فيه المفتوح لما المحرك يبقى ظاهر للصيانة، والصامت لما الشغل جنب سكن أو مخزن، والمتنقل اللي يتسحب من موقع لموقع. التركيب في الأرض، ولو وقف، الغيار من نفس العنوان.":
-    "Open when the engine needs to stay visible for service, silent when the work is beside housing or a store, and mobile when it moves from site to site. Installation is on the land, and if it stops, the spare comes from the same address.",
-  "المقاس على الحمل، مش على التخمين": "Sized to the load, not to a guess",
-  "مفتوح، صامت، ومتنقل": "Open, silent, and mobile",
-  "لوحة التحكم جزء من التوريد": "The control panel is part of the supply",
+  "اختَر المولد حسب حمل الري، مش حسب شكله في الكتالوج":
+    "Choose the generator by the irrigation load, not by how it looks in the catalog",
+  "قبل الاختيار، نحسب حمل التشغيل بناءً على نوع نظام الري—تنقيط أو رش—وعدد ساعات التشغيل والقدرة الكهربائية المتاحة في الموقع. بعدها نحدد قدرة المولد المناسبة، مع لوحة التحكم اللازمة لتشغيل النظام.":
+    "Before choosing, we calculate the operating load from the irrigation type—drip or spray—the hours of operation, and the power available on site. Then we set the right generator capacity, with the control panel needed to run the system.",
+  "نوفر مولدات مفتوحة لسهولة الوصول إلى المحرك والصيانة، ومولدات صامتة للمواقع القريبة من المنازل أو المخازن، ومولدات متنقلة لنقلها بين المواقع. ونساعدك في تحديد أنسب مكان للتركيب حسب طبيعة موقعك.":
+    "We supply open generators for easy access to the engine and service, silent ones for sites near homes or stores, and mobile units that move between sites. We also help you choose the best place to install based on your site.",
+  "قدرة مناسبة للحمل، لا للتخمين": "Capacity sized to the load, not to a guess",
+  "خيارات مفتوحة، صامتة، ومتنقلة": "Open, silent, and mobile options",
+  "لوحة التحكم ضمن التوريد": "The control panel is included in the supply",
   "صيانة وقطع غيار في الموقع": "Service and spare parts on site",
   "ري يتظبط على المساحة والمحصول": "Irrigation set to the area and the crop",
   "توريد وتركيب وصيانة الري المحوري للمساحات الواسعة، وشبكات التنقيط والرش لما الدقة أهم. ومعاهم قطع الغيار ولوحات التحكم من عنوان واحد.":
     "Supply, installation, and service for center pivots on wide areas, and drip and spray networks when precision matters more, with spare parts and control panels from one address.",
   "محوري للتغطية. تنقيط ورش للدقة.": "Pivot for coverage. Drip and spray for precision.",
-  "النظام بيتختار على الأرض: مصدر المياه، المحصول، والمساحة. مش بنبدأ بالتوريد قبل ما الصورة دي تبقى واضحة.":
-    "The system is chosen on the land: the water source, the crop, and the area. Supply does not start before that picture is clear.",
+  "لكل أرض نظام ري يناسبها: لا نعتمد على حلول جاهزة، بل ندرس مساحة الأرض، ومصدر المياه، وطبيعة المحصول، واحتياجات التشغيل؛ لنحدد المنظومة الأنسب قبل البدء في التوريد والتنفيذ.":
+    "Every land has an irrigation system that fits it: we do not rely on ready-made solutions; we study the land area, the water source, the crop, and the operating needs to set the right system before supply and installation begin.",
   "شبكات توصل المياه للنبات بدقة، وتقلل الهدر من غير التضحية بالإنتاج.":
     "Networks that deliver water to the plant and cut waste without giving up yield.",
   "التحكم والصيانة": "Control and service",
@@ -216,25 +222,42 @@ export const enMap: Record<string, string> = {
   "محابس": "Valves",
   "المحابس اللي بتفتح وتقفل مسار المياه جوه الشبكة، عشان الدورة تتقفل على الجزء المطلوب مش على الخط كله.":
     "Valves that open and close the water path inside the network, so the cycle closes on the section you need, not on the whole line.",
-  "كل نقطة مياه ليها دور في الموسم": "Every drop of water has a job in the season",
-  "الجهاز المحوري بيغطي المساحة الواسعة، والتنقيط والرش بيوصلوا المياه للنبات بدقة أعلى. الاختيار مش ذوق، ده ناتج المعاينة.":
-    "The pivot covers the wide area, and drip and spray deliver water to the plant more precisely. The choice is not a preference. It comes from the site visit.",
-  "بعد التشغيل، الصيانة وقطع الغيار بيتابعوا الجهاز. حماية البيفوت، ومن ضمنها الجيربوكس، بتتعمل في الموقع عشان الموسم ما يضيعش في الانتظار.":
-    "After startup, service and spare parts stay with the machine. Pivot protection, including the gearbox, is done on site so the season is not lost waiting.",
+  "كل نقطة ماء تصنع فرقًا في الموسم": "Every drop of water makes a difference in the season",
+  "تغطي أنظمة الري المحوري المساحات الواسعة، بينما يساعد الري بالتنقيط والرش على إيصال المياه إلى النباتات بدقة. نساعدك على اختيار النظام الأنسب بعد معاينة أرضك واحتياجاتها.":
+    "Center-pivot systems cover wide areas, while drip and spray irrigation deliver water to the plants with precision. We help you choose the right system after visiting your land and its needs.",
+  "وبعد التركيب، نواصل دعمك بالصيانة وقطع الغيار، حتى يستمر نظام الري في العمل طوال الموسم.":
+    "After installation, we keep supporting you with service and spare parts so the irrigation system keeps working through the season.",
   "محوري وتنقيط ورش": "Pivot, drip, and spray",
   "لوحات تحكم أوتوماتيكية": "Automatic control panels",
   "صيانة ميدانية وقطع غيار": "Field service and spare parts",
   "قولنا نوع الأرض ومصدر المياه.": "Tell us the land and the water source.",
   "نرجعلك بالنظام المناسب، محوري أو تنقيط أو رش.": "We'll come back with the right system: pivot, drip, or spray.",
-  "عدد الأبراج يتظبط على المساحة، مش على صورة الكتالوج":
-    "The number of towers is set to the area, not to the catalog photo",
-  "المساحة الواسعة ما تتغطاش بخط يتفرد على الأرض. الجهاز بيتحدد بعد المعاينة: كام برج، مصدر المياه فين، والمحصول إيه. البرج بيمشي، والرشاش بيوزّع لحد آخر الجهاز، والطرف بيقفل المساحة اللي الدورة لوحدها ما بتوصلهاش.":
-    "A wide area is not covered by a line laid on the ground. The machine is set after the visit: how many towers, where the water is, and what the crop is. The tower walks, the sprinkler reaches the end of the machine, and the end gun closes the area the cycle does not reach on its own.",
-  "التوريد مش الشاسيه لوحده. لوحة التحكم بتشغّل الدورة من الموقع، ومعاها علب الأبراج، السليبرنج، كابل التشغيل، الموتور، الجيربوكس، والكاوتش. بيتتركّبوا في الأرض، ولو برج وقف الغيار يخرج من مخزون مدينة 6 أكتوبر قبل ما اليوم يضيع من الموسم.":
-    "The supply is not the chassis alone. The control panel runs the cycle from the site, with the tower boxes, slip ring, power cable, motor, gearbox, and tires. They are installed on the land, and if a tower stops, the spare comes from the stock in 6th of October City before the day is lost from the season.",
-  "عدد الأبراج بعد المعاينة، مش من الكتالوج": "Tower count after the visit, not from the catalog",
-  "لوحة التحكم تشغّل الدورة في الموقع": "The control panel runs the cycle on site",
-  "السليبرنج والكابل والرشاش مع الجهاز": "Slip ring, cable, and sprinkler with the machine",
+  "مش كل مساحة ينفعها نفس جهاز الري المحوري!":
+    "Not every area works with the same center-pivot machine!",
+  "اختيار جهاز الري المحوري مش مجرد تحديد عدد الأبراج أو اختيار موديل من الكتالوج؛ لكنه قرار فني بيعتمد على طبيعة الأرض، ومساحتها، ومصدر المياه، ونوع المحصول، ومتطلبات التشغيل.":
+    "Choosing a center-pivot machine is not just setting the number of towers or picking a catalog model; it is a technical decision based on the land, its area, the water source, the crop, and the operating needs.",
+  "في GTS بنساعدك تختار منظومة الري المناسبة لطبيعة مشروعك، بداية من تحديد عدد الأبراج وطول الجهاز، مرورًا بتوزيع الرشاشات وتحقيق التغطية المطلوبة، وصولًا إلى تجهيز الأطراف النهائية لضمان الاستفادة القصوى من المساحة الزراعية.":
+    "At GTS we help you choose the irrigation system that fits your project, from the number of towers and machine length, through sprinkler layout and the coverage you need, to the end guns that make the most of the farm area.",
+  "منظومة متكاملة.. مش مجرد هيكل معدني!": "A complete system.. not just a metal frame!",
+  "نوفر مكونات وحلول أجهزة الري المحوري، بداية من:":
+    "We supply center-pivot components and solutions, starting with:",
+  "لوحات التحكم وأنظمة التشغيل.": "Control panels and operating systems.",
+  "علب التروس (Gearboxes).": "Gearboxes.",
+  "المحركات الكهربائية (Motors).": "Electric motors.",
+  "علب الأبراج ومكونات الحركة.": "Tower boxes and drive components.",
+  "حلقات التوصيل الكهربائية (Slip Rings).": "Electrical slip rings.",
+  "كابلات التشغيل.": "Power cables.",
+  "الإطارات ومستلزمات الحركة.": "Tires and drive accessories.",
+  "مكونات الرش والتوزيع.": "Spray and distribution components.",
+  "والأهم؟ توافر قطع الغيار وسرعة الاستجابة.":
+    "And most important? Spare parts on hand, and a fast response.",
+  "لأننا عارفين إن توقف جهاز الري مش مجرد عطل فني، لكنه وقت ضائع ممكن يؤثر على إنتاجية الموسم بالكامل.":
+    "Because we know a stopped irrigation machine is not just a technical fault; it is lost time that can affect the whole season's yield.",
+  "ومن خلال مخزوننا بمدينة السادس من أكتوبر، بنوفر قطع الغيار اللازمة لدعم أعمال الصيانة وتقليل فترات التوقف.":
+    "Through our stock in 6th of October City, we supply the spare parts needed to support maintenance and cut downtime.",
+  "GTS – شريكك في حلول الاستثمار الزراعي.": "GTS – your partner in agricultural investment solutions.",
+  "حلول متكاملة.. دعم فني.. وقطع غيار تضمن استمرارية التشغيل.":
+    "Integrated solutions.. technical support.. and spare parts that keep the machine running.",
   "قطع غيار جهاز الري المحوري": "Center-pivot spare parts",
   "من لوحة التحكم لحد لمبة البرج. القطعة جزء من التوريد، وموجودة في المخزون لو البرج وقف.":
     "From the control panel to the tower light. The part is part of the supply, and it is in stock if a tower stops.",
@@ -319,8 +342,8 @@ export const enMap: Record<string, string> = {
     "Machines, spare parts, control panels, and generators. The supply for the farm project is gathered in one place, instead of being split across suppliers.",
   "بنود التوريد": "Supply items",
   "المشروع ما يتقسمش على أكتر من عنوان": "The project is not split across addresses",
-  "المواصفات بتبقى واضحة من الأول: الجهاز، الغيار، لوحة التحكم، ومصدر التشغيل. من غير مفاجآت وقت التركيب.":
-    "The specification is clear from the start: the machine, the spare, the control panel, and the power source. No surprises at installation.",
+  "المواصفات بتبقى واضحة من الأول: الجهاز، لوحة التحكم، ومصدر التشغيل. من غير مفاجآت وقت التركيب.":
+    "Specs stay clear from the start: the machine, the control panel, and the power source. No surprises at installation.",
   "أجهزة الري": "Irrigation machines",
   "توريد الري المحوري، وشبكات التنقيط والرش، مع التركيب والتشغيل في الموقع.":
     "Supply of center-pivot, drip, and spray networks, with installation and startup on site.",

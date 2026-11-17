@@ -129,9 +129,14 @@
 }
 
 .gts-arrow svg,
-.gts-nav svg {
+.gts-close svg {
   width: 26px;
   height: 26px;
+}
+
+.gts-nav svg {
+  width: 20px;
+  height: 20px;
 }
 
 .gts-arrow:disabled {
@@ -289,11 +294,12 @@
 
 .gts-close {
   position: absolute;
-  top: 1rem;
+  top: -0.35rem;
   left: 1rem;
-  min-height: 44px;
-  padding: 0 1rem;
-  border-radius: 999px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
 }
 
 @media (min-width: 900px) {
@@ -325,28 +331,59 @@
 }
 
 @media (max-width: 699px) {
-  .gts-arrow,
-  .gts-nav {
+  .gts-lightbox {
+    padding: 0.9rem 0.7rem 1.2rem;
+    place-items: center;
+  }
+
+  .gts-arrow {
     width: 42px;
     height: 42px;
   }
 
   .gts-dialog {
     grid-template-columns: 1fr;
+    width: min(100%, 420px);
+    margin-inline: auto;
+  }
+
+  .gts-close {
+    position: fixed;
+    top: 0.85rem;
+    left: 0.85rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .gts-close svg {
+    width: 20px;
+    height: 20px;
   }
 
   .gts-nav {
     position: absolute;
-    top: 50%;
+    top: 38%;
     transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+  }
+
+  .gts-nav svg {
+    width: 15px;
+    height: 15px;
   }
 
   .gts-nav-prev {
-    right: 0.4rem;
+    right: 0.25rem;
   }
 
   .gts-nav-next {
-    left: 0.4rem;
+    left: 0.25rem;
+  }
+
+  .gts-frame > img {
+    max-width: 100%;
+    max-height: min(56vh, 420px);
   }
 
   .gts-stage {

@@ -90,8 +90,10 @@ function Lightbox({
         tabIndex={-1}
         onClick={(event) => event.stopPropagation()}
       >
-        <button type="button" className="gts-close" onClick={onClose}>
-          <Tx text="إغلاق" />
+        <button type="button" className="gts-close" aria-label="إغلاق · Close" onClick={onClose}>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 7 L17 17 M17 7 L7 17" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+          </svg>
         </button>
         <button
           type="button"
