@@ -103,6 +103,7 @@ export const enMap: Record<string, string> = {
   "المبيعات": "Sales",
   "العنوان": "Address",
   "مدينة 6 أكتوبر": "6th of October City",
+  "محافظة الجيزه": "Giza Governorate",
   "الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر":
     "Sheikh Zayed — Villa 68, First Neighborhood, 11th District",
   "السوشيال ميديا": "Social media",
@@ -375,8 +376,8 @@ export const enMap: Record<string, string> = {
   "وحدات ضخ": "Pump sets",
   "وحدتين ضخ على قاعدة واحدة. الاختيار على التصرف والضغط، والقاعدة تتظبط على مصدر المياه في الموقع.":
     "Two pump sets on one base. The choice follows flow and pressure, and the base is set to the water source on site.",
-  "مدينة 6 أكتوبر، الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر.":
-    "6th of October City, Sheikh Zayed — Villa 68, First Neighborhood, 11th District.",
+  "محافظة الجيزه ، الشيخ زايد — فيلا ٦٨ المجاورة الاولي الحي الحادي عشر.":
+    "Giza Governorate, Sheikh Zayed — Villa 68, First Neighborhood, 11th District.",
   "ري ومحركات وغيار": "Irrigation, engines, and spares",
   "مجموعات توليد": "Generating sets",
   "تركيب وصيانة ميدانية": "Installation and field service",

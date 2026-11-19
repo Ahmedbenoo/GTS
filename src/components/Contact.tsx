@@ -138,10 +138,10 @@ export function Contact() {
           </h2>
           <p className="lead">
             <span className="gts-ar">
-              المقر في {company.address.city}، {company.address.line}.
+              المقر في {company.address.city} ، {company.address.line}.
             </span>
             <span className="gts-en">
-              The office is in 6th of October City, Sheikh Zayed — Villa 68, First Neighborhood, 11th District.
+              The office is in Giza Governorate, Sheikh Zayed — Villa 68, First Neighborhood, 11th District.
             </span>
           </p>
           <ul className="contact-list">
